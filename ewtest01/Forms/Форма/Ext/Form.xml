@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Width>800</Width>
+	<Group>HorizontalIfPossible</Group>
+	<CommandBarLocation>Top</CommandBarLocation>
+	<ScalingMode>Compact</ScalingMode>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<Events>
+		<Event name="OnOpen">ПриОткрытии</Event>
+	</Events>
+	<ChildItems>
+		<UsualGroup name="Группа0" id="65">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа0</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа0</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<ExtendedTooltip name="Группа0РасширеннаяПодсказка" id="66"/>
+			<ChildItems>
+				<UsualGroup name="Группа1" id="34">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа1</v8:content>
+						</v8:item>
+					</Title>
+					<Width>800</Width>
+					<Height>8</Height>
+					<Group>Horizontal</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="35"/>
+					<ChildItems>
+						<UsualGroup name="Группа4" id="42">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа4</v8:content>
+								</v8:item>
+							</Title>
+							<Group>Horizontal</Group>
+							<Representation>NormalSeparation</Representation>
+							<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="43"/>
+							<ChildItems>
+								<InputField name="ПолноеИмяФайла" id="1">
+									<DataPath>ПолноеИмяФайла</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>ПолноеИмяФайла</v8:content>
+										</v8:item>
+									</Title>
+									<HorizontalAlign>Left</HorizontalAlign>
+									<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+									<GroupVerticalAlign>Top</GroupVerticalAlign>
+									<Width>27</Width>
+									<AutoMaxWidth>false</AutoMaxWidth>
+									<MaxWidth>27</MaxWidth>
+									<AutoMaxHeight>false</AutoMaxHeight>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
+									<ContextMenu name="ПолноеИмяФайлаКонтекстноеМеню" id="2"/>
+									<ExtendedTooltip name="ПолноеИмяФайлаРасширеннаяПодсказка" id="3"/>
+								</InputField>
+								<Button name="openfilebutton" id="4">
+									<Type>UsualButton</Type>
+									<Width>10</Width>
+									<CommandName>Form.Command.OpenFile</CommandName>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Open File</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="openfilebuttonРасширеннаяПодсказка" id="5"/>
+								</Button>
+							</ChildItems>
+						</UsualGroup>
+						<UsualGroup name="Группа5" id="44">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа5</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="45"/>
+							<ChildItems>
+								<LabelDecoration name="Декорация1" id="46">
+									<Title formatted="false">
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Декорация1</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="Декорация1КонтекстноеМеню" id="47"/>
+									<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="48"/>
+								</LabelDecoration>
+							</ChildItems>
+						</UsualGroup>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа6" id="67">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа6</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>NormalSeparation</Representation>
+					<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="68"/>
+					<ChildItems>
+						<InputField name="Справ" id="69">
+							<DataPath>Справ</DataPath>
+							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
+							<ContextMenu name="СправКонтекстноеМеню" id="70"/>
+							<ExtendedTooltip name="СправРасширеннаяПодсказка" id="71"/>
+						</InputField>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа2" id="36">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа2</v8:content>
+						</v8:item>
+					</Title>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="37"/>
+					<ChildItems>
+						<LabelDecoration name="Декорация2" id="49">
+							<Title formatted="false">
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Декорация2</v8:content>
+								</v8:item>
+							</Title>
+							<ContextMenu name="Декорация2КонтекстноеМеню" id="50"/>
+							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="51"/>
+						</LabelDecoration>
+						<Table name="ТабФайлФ" id="52">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТабФайл</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТабФайлФКонтекстноеМеню" id="53"/>
+							<AutoCommandBar name="ТабФайлФКоманднаяПанель" id="54">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТабФайлФРасширеннаяПодсказка" id="55"/>
+							<SearchStringAddition name="ТабФайлФСтрокаПоиска" id="56">
+								<AdditionSource>
+									<Item>ТабФайлФ</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабФайлФСтрокаПоискаКонтекстноеМеню" id="57"/>
+								<ExtendedTooltip name="ТабФайлФСтрокаПоискаРасширеннаяПодсказка" id="58"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТабФайлФСостояниеПросмотра" id="59">
+								<AdditionSource>
+									<Item>ТабФайлФ</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабФайлФСостояниеПросмотраКонтекстноеМеню" id="60"/>
+								<ExtendedTooltip name="ТабФайлФСостояниеПросмотраРасширеннаяПодсказка" id="61"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТабФайлФУправлениеПоиском" id="62">
+								<AdditionSource>
+									<Item>ТабФайлФ</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТабФайлФУправлениеПоискомКонтекстноеМеню" id="63"/>
+								<ExtendedTooltip name="ТабФайлФУправлениеПоискомРасширеннаяПодсказка" id="64"/>
+							</SearchControlAddition>
+						</Table>
+					</ChildItems>
+				</UsualGroup>
+				<UsualGroup name="Группа3" id="40">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Группа3</v8:content>
+						</v8:item>
+					</Title>
+					<Width>800</Width>
+					<Height>3</Height>
+					<Group>Horizontal</Group>
+					<Representation>None</Representation>
+					<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="41"/>
+					<ChildItems>
+						<Button name="Закрыть" id="6">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<GroupVerticalAlign>Top</GroupVerticalAlign>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="7"/>
+						</Button>
+						<Button name="Кнопка1" id="38">
+							<Type>UsualButton</Type>
+							<CommandName>Form.StandardCommand.Close</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Кнопка1</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="39"/>
+						</Button>
+					</ChildItems>
+				</UsualGroup>
+			</ChildItems>
+		</UsualGroup>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.ewtest01</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+		<Attribute name="ПолноеИмяФайла" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Полное имя файла</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="мТехПрокачка" id="3">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>М тех прокачка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТабФайл" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таб файл</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Справ" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Справ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="OpenFile" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Open file</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Open file</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>OpenFile</Action>
+		</Command>
+	</Commands>
+</Form>
