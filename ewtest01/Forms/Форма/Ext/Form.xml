@@ -206,16 +206,16 @@
 							<CommandName>Form.StandardCommand.Close</CommandName>
 							<ExtendedTooltip name="ЗакрытьРасширеннаяПодсказка" id="7"/>
 						</Button>
-						<Button name="Кнопка1" id="38">
+						<Button name="ReadFileButton" id="38">
 							<Type>UsualButton</Type>
-							<CommandName>Form.StandardCommand.Close</CommandName>
+							<CommandName>Form.Command.ReadFile</CommandName>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Кнопка1</v8:content>
+									<v8:content>Read File</v8:content>
 								</v8:item>
 							</Title>
-							<ExtendedTooltip name="Кнопка1РасширеннаяПодсказка" id="39"/>
+							<ExtendedTooltip name="ReadFileButtonРасширеннаяПодсказка" id="39"/>
 						</Button>
 					</ChildItems>
 				</UsualGroup>
@@ -293,6 +293,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>OpenFile</Action>
+		</Command>
+		<Command name="ReadFile" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Read file</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Read file</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ReadFile</Action>
 		</Command>
 	</Commands>
 </Form>
