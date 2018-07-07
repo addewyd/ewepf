@@ -184,6 +184,41 @@
 								<ExtendedTooltip name="ТабФайлФУправлениеПоискомРасширеннаяПодсказка" id="64"/>
 							</SearchControlAddition>
 						</Table>
+						<Table name="OutBOTable" id="72">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>OutBOTable</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="OutBOTableКонтекстноеМеню" id="73"/>
+							<AutoCommandBar name="OutBOTableКоманднаяПанель" id="74"/>
+							<ExtendedTooltip name="OutBOTableРасширеннаяПодсказка" id="75"/>
+							<SearchStringAddition name="OutBOTableСтрокаПоиска" id="76">
+								<AdditionSource>
+									<Item>OutBOTable</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="OutBOTableСтрокаПоискаКонтекстноеМеню" id="77"/>
+								<ExtendedTooltip name="OutBOTableСтрокаПоискаРасширеннаяПодсказка" id="78"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="OutBOTableСостояниеПросмотра" id="79">
+								<AdditionSource>
+									<Item>OutBOTable</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="OutBOTableСостояниеПросмотраКонтекстноеМеню" id="80"/>
+								<ExtendedTooltip name="OutBOTableСостояниеПросмотраРасширеннаяПодсказка" id="81"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="OutBOTableУправлениеПоиском" id="82">
+								<AdditionSource>
+									<Item>OutBOTable</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="OutBOTableУправлениеПоискомКонтекстноеМеню" id="83"/>
+								<ExtendedTooltip name="OutBOTableУправлениеПоискомРасширеннаяПодсказка" id="84"/>
+							</SearchControlAddition>
+						</Table>
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="Группа3" id="40">
@@ -275,6 +310,32 @@
 			</Title>
 			<Type>
 				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OutBOTable" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Out BOTable</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="OutBOTableName" id="7">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Out BOTable name</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 	</Attributes>

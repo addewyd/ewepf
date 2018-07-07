@@ -91,6 +91,32 @@ endProcedure
 	
 КонецПроцедуры
 
+&НаСервере
+procedure ChangeRequisites(table, tablename)
+	NewReqs = New array;
+	
+    for each col in table.columns do
+         NewReqs.Add(
+            New РеквизитФормы(
+                Col.Name, Col.ТипЗначения,
+                tablename
+            )
+         );
+	enddo;	
+	ИзменитьРеквизиты(NewReqs);
+
+	Для Каждого Колонка Из table.Колонки Цикл
+		Колонка.Заголовок = Колонка.Имя + "HEAD";      // ?
+        НовыйЭлемент = Элементы.Добавить(
+            "" + table + "_" + Колонка.Имя, Тип("ПолеФормы"), Элементы[tablename]
+        );
+        НовыйЭлемент.Вид = ВидПоляФормы.ПолеВвода;
+        НовыйЭлемент.ПутьКДанным = tablename + "." + Колонка.Имя;
+    КонецЦикла;
+	//ЗначениеВРеквизитФормы(table, tablename);
+	
+	
+endProcedure	
 
 &НаКлиенте
 Процедура ПриОткрытии(Отказ)
@@ -304,17 +330,17 @@ EndProcedure
 					
 					if (NodeStr.NodeName <> "TradeDocsInAct") 
 						and (NodeStr.NodeName <> "TradeDocsInBill") then
+						Rec = ТаблицаИзXML.Add();
+
 						for each attr in NodeStr.attributes do
 							ColName = attr.Name;	    // Lab 007
 							// Message("attr2 " + ColName);
 							ColValue = Attr.Value;
 							if ЭтоЧисло(ColValue) then
-								COlValue = StrReplace(colValue, ",", ".");
-							
+								COlValue = StrReplace(colValue, ",", ".");							
 							endif;
 							
 							//Message("attrVal " + ColValue);
-							Rec = ТаблицаИзXML.Add();
 							Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
 							//cnt = ТаблицаИзXML.Count();
 							//AddedRec = ТаблицаИзXML.Get(cnt - 1);
@@ -329,8 +355,7 @@ EndProcedure
 							for each NodeStrStr in NodeStr.ChildNodes do // Lab 008
 								ColName = NodeStrStr.NodeName;
 								if ColName = "PartnerExtCode" then
-									Rec = ТаблицаИзXML.Add();                          // ???
-									Message(ColName + " (pec) " + NodeStrStr.NodeValue);
+						//			Message(ColName + " (pec) " + NodeStrStr.NodeValue);
 									Rec[ColMap01[Node.NodeName][ColName]] = NodeStrStr.NodeValue;
 								endif;
 							enddo;
@@ -343,6 +368,28 @@ EndProcedure
 						
 						
 					else  // Lab 010
+						For each nodeStrStr in NodeStr do
+							Rec = ТаблицаИзXML.Add();
+							
+							For each attr in NodeStr.attributes do
+								ColName = attr.Name;
+								ColValue = attr.Value;
+								if ЭтоЧисло(ColValue) then
+									COlValue = StrReplace(colValue, ",", ".");							
+								endif;
+								Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
+							enddo;
+							
+							For Each attr in NodeStrStr do
+								ColName = attr.Name;
+								ColValue = attr.Value;
+								if ЭтоЧисло(ColValue) then
+									COlValue = StrReplace(colValue, ",", ".");							
+								endif;
+								Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
+							enddo;
+							
+						enddo;						
 						
 					endif;
 					
@@ -351,7 +398,7 @@ EndProcedure
 				
 				
 				// lab 005
-				мСписокТаблицИзXML.Insert (StrNode.NodeName,ТаблицаИзXML);   
+				мСписокТаблицИзXML.Insert (Node.NodeName,ТаблицаИзXML);   
 				// lab 006
 								
 			Enddo;
@@ -360,5 +407,25 @@ EndProcedure
 		Enddo;
 		
 	КонецЕсли;	
+	
+	// Lab 013
+	
+	// Lab 014
+	
+	For each kv in мСписокТаблицИзXML do
+		tablename = kv.key;
+		table = kv.value;
+		message("Table " + tablename);
+		
+		if tablename = "OutcomesByOffice" then
+			OutBOTableName = tableName;
+			ChangeRequisites(table, "OutBOTable");
+			ЗначениеВРеквизитФормы(table, "OutBOTable");
+			//ОбновитьОтображениеДанных();
+			ЭтаФорма.Прочитать();
+		endif;
+		
+	enddo;
+	
 		
 КонецПроцедуры	
