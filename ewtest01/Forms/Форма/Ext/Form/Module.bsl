@@ -1,4 +1,6 @@
-﻿
+﻿&AtServer
+var tables6;
+
 #Область ОбработчикиКомандФормы
 
 &НаКлиенте
@@ -23,6 +25,7 @@ endProcedure
 	// Вставить содержимое обработчика.
 	Message("SOpen");
 КонецПроцедуры
+
 &НаСервере
 Процедура ПриСозданииНаСервере(Отказ, СтандартнаяОбработка)
 	// Вставить содержимое обработчика.
@@ -31,6 +34,12 @@ endProcedure
 
 &НаСервере
 procedure ChangeRequisites(table, tablename)
+	
+	v = FormAttributeToValue(tablename);
+	if v.columns.Count() > 0 then
+		return;
+	Endif;
+	
 	NewReqs = New array;
 			
 		for each col in table.columns do
@@ -180,6 +189,18 @@ Procedure ReadOrdersServer(XMLStrings)
 	
 EndProcedure	
 
+&НаСервере
+Procedure ClearTables()
+	
+	for each tn in tables6 do
+	
+		table = FormAttributeToValue(tn);
+		table.clear();
+		ValueToFormAttribute(table, tn);
+	enddo;
+	
+EndProcedure
+
 
 &НаСервере
 Процедура ЧитатьДанныеСессии(XMLString, ИмяФайлаЗагрузки)
@@ -193,6 +214,8 @@ EndProcedure
 	D2 = Новый ОписаниеТипов("Число",
         Новый КвалификаторыЧисла(2, 0));
 	C = Новый ОписаниеТипов("Дата");
+	
+	ClearTables();
 
 	mXMLTableList = New Map;
 	
@@ -221,8 +244,8 @@ EndProcedure
 			НомерСмены = Session.ПолучитьАтрибут("SessionNum");
 			
 			StartDateTime = Session.GetAttribute("StartDateTime");
-			Сообщить(StartDateTime);
-			Сообщить(Session.ChildNodes);
+			//Сообщить(StartDateTime);
+			//Сообщить(Session.ChildNodes);
 			For Each Node in Session.ChildNodes Do
 				//Сообщить(Node.NodeName);
 				if Node.ChildNodes.Count() = 0 then   // Lab 001
@@ -276,13 +299,15 @@ EndProcedure
 										ColMap01[Node.NodeName].Insert(ColName, Index01);
 										Index01 = Index01 + 1;
 										
-									Иначе                                              
+									Иначе                                      
+							//			Message("Bad colname? " + ColName +" (" + StrStrNode.NodeName);
 										ТаблицаИзXML.Колонки.Добавить(ColName);
 										ColMap01[Node.NodeName].Insert(ColName, Index01);
 										Index01 = Index01 + 1;
 										
 									КонецЕсли;
 							enddo;								
+							Break; // ???!!!
 								
 						enddo;
 					ИначеЕсли StrNode.NodeName = "OutcomeByOffice" Тогда
@@ -370,7 +395,7 @@ EndProcedure
 						
 						
 					else  // Lab 010
-						For each nodeStrStr in NodeStr do
+						For each nodeStrStr in NodeStr.ChildNodes do
 							Rec = ТаблицаИзXML.Add();
 							
 							For each attr in NodeStr.attributes do
@@ -382,7 +407,7 @@ EndProcedure
 								Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
 							enddo;
 							
-							For Each attr in NodeStrStr do
+							For Each attr in NodeStrStr.attributes do
 								ColName = attr.Name;
 								ColValue = attr.Value;
 								if ЭтоЧисло(ColValue) then
@@ -423,11 +448,21 @@ EndProcedure
 		table = kv.value;
 		message("Table " + tablename);
 		
-		if tablename = "OutcomesByOffice" then
-			OutBOTableName = tableName;
-			ChangeRequisites(table, tablename);
-			ЗначениеВРеквизитФормы(table, tablename);
+		//if tablename = "OutcomesByOffice" then
+		//	OutBOTableName = tableName;
+		//	ChangeRequisites(table, tablename);
+		//	ЗначениеВРеквизитФормы(table, tablename);
 			//ОбновитьОтображениеДанных();
+		//endif;
+		//if tablename = "TradeDocsInAct"
+		//	or tablename = "TradeDocsInBills"
+		//	or tablename = "OutcomesByRetail"
+		//	or tablename = "OutcomesByOffice"
+		//	or tablename = "IncomesByDischarge"
+		//	or tablename = "TradeDocsInActs" then
+		if not tables6.find(tablename) = Undefined then
+			ChangeRequisites(table, tablename);
+			ValueToFormAttribute(table, tablename);
 		endif;
 						
 	enddo;
@@ -442,7 +477,12 @@ EndProcedure
 		str = table.get(i);
 		rec = dens0.add();
 		rec.TankNum = Число(СокрЛП(str.TankNum));
-		rec.Density = Число(СтрЗаменить(str.EndDensity,",","."))/1000;
+		strdens = str.EndDensity;
+		if strdens = "" then
+			strdens = "0.0";
+		endif;
+		
+		rec.Density = Число(СтрЗаменить(strDens,",","."))/1000;
 	enddo;
 		
 	ChangeRequisites(Dens0, "Dens");
@@ -472,3 +512,12 @@ EndProcedure
 	
 	
 КонецПроцедуры	
+
+tables6 = new array();
+tables6.add("TradeDocsInActs");
+tables6.add("TradeDocsInBills");
+tables6.add("OutcomesByRetail");
+tables6.add("OutcomesByOffice");
+tables6.add("IncomesByDischarge");
+tables6.add("ItemOutcomesByRetail");
+ 

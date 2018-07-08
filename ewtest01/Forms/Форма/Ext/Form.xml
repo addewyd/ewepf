@@ -11,12 +11,6 @@
 	</Events>
 	<ChildItems>
 		<UsualGroup name="WholeG0" id="179">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Whole g0</v8:content>
-				</v8:item>
-			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -27,12 +21,6 @@
 			<ExtendedTooltip name="WholeG0РасширеннаяПодсказка" id="180"/>
 			<ChildItems>
 				<UsualGroup name="WholeG" id="172">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Whole G</v8:content>
-						</v8:item>
-					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -43,12 +31,6 @@
 					<ExtendedTooltip name="WholeGРасширеннаяПодсказка" id="173"/>
 					<ChildItems>
 						<UsualGroup name="LeftG" id="65">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Left G</v8:content>
-								</v8:item>
-							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -61,12 +43,6 @@
 							<ExtendedTooltip name="LeftGРасширеннаяПодсказка" id="66"/>
 							<ChildItems>
 								<UsualGroup name="LeftGTop" id="34">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Left g top</v8:content>
-										</v8:item>
-									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -114,12 +90,6 @@
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="LeftGMiddle" id="67">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Left g middle</v8:content>
-										</v8:item>
-									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -146,12 +116,6 @@
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="LeftBottom" id="268">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Left bottom</v8:content>
-										</v8:item>
-									</Title>
 									<ToolTip>
 										<v8:item>
 											<v8:lang>ru</v8:lang>
@@ -166,12 +130,6 @@
 									<ExtendedTooltip name="LeftBottomРасширеннаяПодсказка" id="269"/>
 									<ChildItems>
 										<UsualGroup name="LeftBottomLeft" id="270">
-											<Title>
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Left bottom left</v8:content>
-												</v8:item>
-											</Title>
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
@@ -281,12 +239,6 @@
 							</ChildItems>
 						</UsualGroup>
 						<UsualGroup name="RightG" id="184">
-							<Title>
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Right G</v8:content>
-								</v8:item>
-							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -553,12 +505,6 @@
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="MainBottom" id="40">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Main bottom (buttons)</v8:content>
-						</v8:item>
-					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -610,6 +556,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>IncomesByDischarge</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>IncomesByDischarge</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="IncomesByDischargeКонтекстноеМеню" id="294"/>
 			<AutoCommandBar name="IncomesByDischargeКоманднаяПанель" id="295"/>
@@ -645,6 +597,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>ItemOutcomesByRetail</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>IncomesByDischarge</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="ItemOutcomesByRetailКонтекстноеМеню" id="307"/>
 			<AutoCommandBar name="ItemOutcomesByRetailКоманднаяПанель" id="308"/>
@@ -680,6 +638,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>OutcomesByOffice</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>OutcomesByOffice</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="OutcomesByOfficeКонтекстноеМеню" id="320"/>
 			<AutoCommandBar name="OutcomesByOfficeКоманднаяПанель" id="321"/>
@@ -715,6 +679,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>OutcomesByRetail</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>OutcomesByRetail</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="OutcomesByRetailКонтекстноеМеню" id="333"/>
 			<AutoCommandBar name="OutcomesByRetailКоманднаяПанель" id="334"/>
@@ -750,6 +720,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>TradeDocsInActs</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>TradeDocsInActs</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="TradeDocsInActsКонтекстноеМеню" id="346"/>
 			<AutoCommandBar name="TradeDocsInActsКоманднаяПанель" id="347"/>
@@ -785,6 +761,12 @@
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>TradeDocsInBills</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>TradeDocsInBills</v8:content>
+				</v8:item>
+			</Title>
 			<RowFilter xsi:nil="true"/>
 			<ContextMenu name="TradeDocsInBillsКонтекстноеМеню" id="359"/>
 			<AutoCommandBar name="TradeDocsInBillsКоманднаяПанель" id="360"/>
