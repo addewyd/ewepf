@@ -21,7 +21,73 @@ endProcedure
 &НаСервере
 Процедура ПриОткрытииНаСервере()
 	// Вставить содержимое обработчика.
+	Message("SOpen");
 КонецПроцедуры
+&НаСервере
+Процедура ПриСозданииНаСервере(Отказ, СтандартнаяОбработка)
+	// Вставить содержимое обработчика.
+	Message("SCreate");
+КонецПроцедуры
+
+&НаСервере
+procedure ChangeRequisites(table, tablename)
+	NewReqs = New array;
+			
+		for each col in table.columns do
+    	    NewReqs.Add(
+            	New РеквизитФормы(
+                	Col.Name, Col.ТипЗначения,
+                	tablename
+            	)
+         	);
+		enddo;	
+		ИзменитьРеквизиты(NewReqs);
+
+		Для Каждого Колонка Из table.Колонки Цикл
+			Колонка.Заголовок = Колонка.Имя + "HEAD";      // ?
+        	НовыйЭлемент = Элементы.Добавить(
+            	"" + tablename + "_" + Колонка.Имя, Тип("ПолеФормы"), Элементы[tablename]
+        	);
+        	НовыйЭлемент.Вид = ВидПоляФормы.ПолеВвода;
+        	НовыйЭлемент.ПутьКДанным = tablename + "." + Колонка.Имя;
+		КонецЦикла;
+	
+endProcedure	
+
+&НаКлиенте
+Процедура ПриОткрытии(Отказ)
+	Сообщить("COpen", СтатусСообщения.Внимание);	
+
+	ПриОткрытииНаСервере();
+	СоздатьТаблицы();
+	
+	Сообщить(мТехПрокачка, СтатусСообщения.Внимание);	
+	
+КонецПроцедуры
+
+&НаКлиенте
+Procedure ReadFile(command)
+	XMLString = "";
+	Текст = Новый ЧтениеТекста(ПолноеИмяФайла);
+	Пока Истина Цикл
+        Строка = Текст.ПрочитатьСтроку();
+        Если Строка = Неопределено Тогда
+            Прервать;
+		Иначе
+			XmlString = XmlString + Строка;
+        КонецЕсли;
+	КонецЦикла;
+	
+	ЧитатьДанныеСессии(XMLString, ПолноеИмяФайла);
+EndProcedure	
+
+&НаКлиенте
+Procedure ReadOrders(command)
+	ReadOrdersServer("");
+EndProcedure	
+
+
+#КонецОбласти
 
 &НаСервере
 Процедура СоздатьТаблицы()
@@ -29,36 +95,7 @@ endProcedure
 	S = Новый ОписаниеТипов("Строка");
 	D = Новый ОписаниеТипов("Число",
         Новый КвалификаторыЧисла(15, 2));
-		
-	t = РеквизитФормыВЗначение("ТабФайл");
-	
-	t.Колонки.Добавить("НомСтр", D, "№");
-	t.Колонки.Добавить("ВидДвижения", S, "ВидДвижения");
-					
-	НовыеРеквизиты = Новый Массив;
-	
-    Для Каждого Колонка Из t.Колонки Цикл
-         НовыеРеквизиты.Добавить(
-            Новый РеквизитФормы(
-                Колонка.Имя, Колонка.ТипЗначения,
-                "ТабФайл"
-            )
-         );
-	КонецЦикла;	
-		 
-	ИзменитьРеквизиты(НовыеРеквизиты);
-	
-	Для Каждого Колонка Из t.Колонки Цикл
-		Колонка.Заголовок = Колонка.Имя + "HEAD";      // ?
-        НовыйЭлемент = Элементы.Добавить(
-            "" + t + "_" + Колонка.Имя, Тип("ПолеФормы"), Элементы["ТабФайлФ"]
-        );
-        НовыйЭлемент.Вид = ВидПоляФормы.ПолеВвода;
-        НовыйЭлемент.ПутьКДанным = "ТабФайл" + "." + Колонка.Имя;
-    КонецЦикла;
-	ЗначениеВРеквизитФормы(t, "ТабФайл");
-	
-	
+			
 // ..............................................................................	
 
 	m = РеквизитФормыВЗначение("мТехПрокачка");
@@ -91,71 +128,18 @@ endProcedure
 	
 КонецПроцедуры
 
-&НаСервере
-procedure ChangeRequisites(table, tablename)
-	NewReqs = New array;
-	
-    for each col in table.columns do
-         NewReqs.Add(
-            New РеквизитФормы(
-                Col.Name, Col.ТипЗначения,
-                tablename
-            )
-         );
-	enddo;	
-	ИзменитьРеквизиты(NewReqs);
-
-	Для Каждого Колонка Из table.Колонки Цикл
-		Колонка.Заголовок = Колонка.Имя + "HEAD";      // ?
-        НовыйЭлемент = Элементы.Добавить(
-            "" + table + "_" + Колонка.Имя, Тип("ПолеФормы"), Элементы[tablename]
-        );
-        НовыйЭлемент.Вид = ВидПоляФормы.ПолеВвода;
-        НовыйЭлемент.ПутьКДанным = tablename + "." + Колонка.Имя;
-    КонецЦикла;
-	//ЗначениеВРеквизитФормы(table, tablename);
-	
-	
-endProcedure	
-
-&НаКлиенте
-Процедура ПриОткрытии(Отказ)
-	Сообщить("CP02", СтатусСообщения.Внимание);	
-
-	ПриОткрытииНаСервере();
-	СоздатьТаблицы();
-	
-	Сообщить(мТехПрокачка, СтатусСообщения.Внимание);	
-	
-КонецПроцедуры
-
-&НаКлиенте
-Procedure ReadFile(command)
-	XMLString = "";
-	Текст = Новый ЧтениеТекста(ПолноеИмяФайла);
-	Пока Истина Цикл
-        Строка = Текст.ПрочитатьСтроку();
-        Если Строка = Неопределено Тогда
-            Прервать;
-		Иначе
-			XmlString = XmlString + Строка;
-    //        Сообщить(Строка);
-        КонецЕсли;
+&НаКлиентеНаСервереБезКонтекста
+Функция ПолучитьИмяФайла(Знач ПолноеИмя)
+	Поз=Найти(ПолноеИмя,"\");
+	Пока Поз>0 Цикл 
+		ПолноеИмя=Сред(ПолноеИмя,Поз+1); 
+		Поз=Найти(ПолноеИмя,"\");
 	КонецЦикла;
-	
-	//Парсер = Новый ЧтениеXML;
-	//Парсер.УстановитьСтроку(XMLString);
- 
-    //Построитель = Новый ПостроительDOM;
- 
-    //Документ = Построитель.Прочитать(Парсер);
-	//Сообщить(Документ);
-	ЧитатьДанныеСессии(XMLString);
-EndProcedure	
+	Возврат ПолноеИмя;
+КонецФункции  
 
-#КонецОбласти
 
-&НаСервере
+&НаСервереБезКонтекста
 Функция ЭтоЧисло(Знач ТекСтр)  
 	
     ТекСтр=СокрЛП(ТекСтр);
@@ -192,13 +176,25 @@ EndProcedure
 КонецФункции     
 
 &НаСервере
-Процедура ЧитатьДанныеСессии(XMLString)
+Procedure ReadOrdersServer(XMLStrings)
+	
+EndProcedure	
+
+
+&НаСервере
+Процедура ЧитатьДанныеСессии(XMLString, ИмяФайлаЗагрузки)
 	S = Новый ОписаниеТипов("Строка");
 	D = Новый ОписаниеТипов("Число",
         Новый КвалификаторыЧисла(15, 2));
+	D10 = Новый ОписаниеТипов("Число",
+        Новый КвалификаторыЧисла(10, 0));
+	D10_5 = Новый ОписаниеТипов("Число",
+        Новый КвалификаторыЧисла(10, 5));
+	D2 = Новый ОписаниеТипов("Число",
+        Новый КвалификаторыЧисла(2, 0));
 	C = Новый ОписаниеТипов("Дата");
 
-	мСписокТаблицИзXML = New Map;
+	mXMLTableList = New Map;
 	
 	ColMap01 = New Map;
 	Index01 = 0;
@@ -217,18 +213,27 @@ EndProcedure
 		SessionList = DataPacket.GetElementByTagName("Sessions")[0].ChildNodes;
 		
 		For Each Session in SessionList Do
+			
+			
+			НачалоСмены = Session.ПолучитьАтрибут("StartDateTime");
+			КонецСмены = Session.ПолучитьАтрибут("EndDateTime");
+			ОператорСмены = Session.ПолучитьАтрибут("UserName");
+			НомерСмены = Session.ПолучитьАтрибут("SessionNum");
+			
 			StartDateTime = Session.GetAttribute("StartDateTime");
 			Сообщить(StartDateTime);
 			Сообщить(Session.ChildNodes);
 			For Each Node in Session.ChildNodes Do
-				Сообщить(Node.NodeName);
+				//Сообщить(Node.NodeName);
 				if Node.ChildNodes.Count() = 0 then   // Lab 001
 					Continue;
 				Endif;
-				//ТаблицаИзXML = мСписокТаблицИзXML.FindByValue.(Node.NodeName);
+				//ТаблицаИзXML = mXMLTableList.FindByValue.(Node.NodeName);
 				
-				IF мСписокТаблицИзXML.Get(Node.NodeName) = undefined then
+				IF mXMLTableList.Get(Node.NodeName) = undefined then
+					
 				    ТаблицаИзXML = new ТаблицаЗначений;
+					
 					Message("New Table " + Node.NodeName);
 					ColMap01.Insert(Node.NodeName, new Map);
 					Index01 = 0;
@@ -240,7 +245,7 @@ EndProcedure
 					EnddO;
 					For Each attr in StrNode.attributes do
 							ColName = attr.Name;
-							Message("New col " + ColName);
+							// Message("New col " + ColName);
 							Если (Найти(ColName,"Volume")>0) 
 								ИЛИ (Найти(ColName,"Amount")>0) 
 								ИЛИ (Найти(ColName,"Mass")>0) Тогда
@@ -263,7 +268,7 @@ EndProcedure
 									
 							For each attr in StrStrNode.attributes do
 									ColName = attr.Name;
-									Message("new col  " + ColName);
+							//		Message("new col  " + ColName);
 									Если (Найти(ColName,"Volume") > 0) 
 										ИЛИ (Найти(ColName,"Amount") > 0) 
 										ИЛИ (Найти(ColName,"Mass") > 0) Тогда
@@ -285,7 +290,7 @@ EndProcedure
 							
 							ColName = "PartnerExtCode";
 							ТаблицаИзXML.Колонки.Добавить(ColName);
-							message(Node.NodeName + " added col PartnerExtCode");
+							//message(Node.NodeName + " added col PartnerExtCode");
 							
 							ColMap01[Node.NodeName].Insert(ColName, Index01);
 							Index01 = Index01 + 1;
@@ -294,11 +299,11 @@ EndProcedure
 					
 					///----
 					ColName = 	"КодАЗС";
-					ТаблицаИзXML.Колонки.Добавить(ColName, D);
+					ТаблицаИзXML.Колонки.Добавить(ColName, D10, "Код АЗС");
 					ColMap01[Node.NodeName].Insert(ColName, Index01);
 					Index01 = Index01 + 1;
 					ColName = "НомерСмены";
-					ТаблицаИзXML.Колонки.Добавить(ColName, D);
+					ТаблицаИзXML.Колонки.Добавить(ColName, D10);
 					ColMap01[Node.NodeName].Insert(ColName, Index01);
 								Index01 = Index01 + 1;
 					ColName = "НачалоСмены";
@@ -340,22 +345,13 @@ EndProcedure
 								COlValue = StrReplace(colValue, ",", ".");							
 							endif;
 							
-							//Message("attrVal " + ColValue);
 							Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
-							//cnt = ТаблицаИзXML.Count();
-							//AddedRec = ТаблицаИзXML.Get(cnt - 1);
-							
-							//Message("AddedVal " 
-							//	+ ColName + " ind " + 
-							//		ColMap01[Node.NodeName][ColName] + " " 
-							//		+ AddedRec[ColMap01[Node.NodeName][ColName]]);
 						enddo;
 						
 						if (NodeStr.NodeName  = "OutcomeByOffice") then                // ????
 							for each NodeStrStr in NodeStr.ChildNodes do // Lab 008
 								ColName = NodeStrStr.NodeName;
 								if ColName = "PartnerExtCode" then
-						//			Message(ColName + " (pec) " + NodeStrStr.NodeValue);
 									Rec[ColMap01[Node.NodeName][ColName]] = NodeStrStr.NodeValue;
 								endif;
 							enddo;
@@ -363,7 +359,13 @@ EndProcedure
 						// Lab 009
 						
 						///----
-					
+					    Rec.КодАЗС = AzsCode;
+						Rec.НомерСмены = Число(НомерСмены);
+						Rec.НачалоСмены = НачалоСмены;
+						Rec.КонецСмены = КонецСмены;
+						Rec.ОператорСмены = ОператорСмены;
+						Rec.ФайлЗагрузки = ИмяФайлаЗагрузки;
+
 						/// ----								
 						
 						
@@ -388,21 +390,25 @@ EndProcedure
 								endif;
 								Rec[ColMap01[Node.NodeName][ColName]] = ColValue;
 							enddo;
+							// Lab 012
+							Rec.КодАЗС = AzsCode;
+							Rec.НомерСмены = Число(НомерСмены);
+							Rec.НачалоСмены = НачалоСмены;
+							Rec.КонецСмены = КонецСмены;
+							Rec.ОператорСмены = ОператорСмены;
+							Rec.ФайлЗагрузки = ИмяФайлаЗагрузки;
 							
 						enddo;						
-						
-					endif;
-					
-					
+					endif;					
 				enddo;
 				
 				
 				// lab 005
-				мСписокТаблицИзXML.Insert (Node.NodeName,ТаблицаИзXML);   
+				mXMLTableList.Insert (Node.NodeName,ТаблицаИзXML);   
 				// lab 006
 								
 			Enddo;
-			tcnt = мСписокТаблицИзXML.Count();
+			tcnt = mXMLTableList.Count();
 			Message("table count " + tcnt);
 		Enddo;
 		
@@ -412,20 +418,57 @@ EndProcedure
 	
 	// Lab 014
 	
-	For each kv in мСписокТаблицИзXML do
+	For each kv in mXMLTableList do
 		tablename = kv.key;
 		table = kv.value;
 		message("Table " + tablename);
 		
 		if tablename = "OutcomesByOffice" then
 			OutBOTableName = tableName;
-			ChangeRequisites(table, "OutBOTable");
-			ЗначениеВРеквизитФормы(table, "OutBOTable");
+			ChangeRequisites(table, tablename);
+			ЗначениеВРеквизитФормы(table, tablename);
 			//ОбновитьОтображениеДанных();
-			ЭтаФорма.Прочитать();
 		endif;
+						
+	enddo;
+	
+	table = mXMLTableList["Tanks"];
+	
+	Dens0 = New ValueTable;
+	Dens0.Columns.Add("TankNum", D2);	
+	Dens0.Columns.Add("Density", D10_5);
+	
+	for i = 0 to table.count() - 1 do
+		str = table.get(i);
+		rec = dens0.add();
+		rec.TankNum = Число(СокрЛП(str.TankNum));
+		rec.Density = Число(СтрЗаменить(str.EndDensity,",","."))/1000;
+	enddo;
+		
+	ChangeRequisites(Dens0, "Dens");
+	ЗначениеВРеквизитФормы(Dens0, "Dens");
+	
+	
+	For each kv in mXMLTableList do
+		tablename = kv.key;
+		table = kv.value;
+		message("Table " + tablename);
+		Если (tablename<>"OutcomesByRetail") И (tablename<>"OutcomesByOffice") И (tablename<>"ItemOutcomesByRetail") 
+			И (tablename<>"IncomesByDischarge") И (tablename<>"TradeDocsInActs") И (tablename<>"TradeDocsInBills") Тогда
+			message("cont 1");
+			Продолжить;
+		КонецЕсли;	 
+		
+		if tablename = "OutcomesByOffice" then
+//			ПрочитатьСуммуЦенуОбъемИзФайлаОрдера(ТаблицаИзXML);			
+//			ТаблицаИзXML.Свернуть("TankNum,OrigPrice,PaymentModeExtCode,FuelExtCode,PaymentModeName,FuelName,PartnerExtCode,КодАЗС,НомерСмены,НачалоСмены,КонецСмены,ОператорСмены,ФайлЗагрузки","Mass,Volume,Amount");
+			
+		endif;
+		// here by retail
+		// and by offices
+		Message("c " + tablename);
 		
 	enddo;
 	
-		
+	
 КонецПроцедуры	
