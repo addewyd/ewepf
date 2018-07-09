@@ -632,6 +632,16 @@
 				<ExtendedTooltip name="ItemOutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="318"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация5" id="412">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Office</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация5КонтекстноеМеню" id="413"/>
+			<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="414"/>
+		</LabelDecoration>
 		<Table name="OutcomesByOffice" id="319">
 			<Representation>List</Representation>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -671,6 +681,41 @@
 				</AdditionSource>
 				<ContextMenu name="OutcomesByOfficeУправлениеПоискомКонтекстноеМеню" id="330"/>
 				<ExtendedTooltip name="OutcomesByOfficeУправлениеПоискомРасширеннаяПодсказка" id="331"/>
+			</SearchControlAddition>
+		</Table>
+		<Table name="OutcomesByOfficeGB" id="415">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>OutcomesByOfficeGB</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="OutcomesByOfficeGBКонтекстноеМеню" id="416"/>
+			<AutoCommandBar name="OutcomesByOfficeGBКоманднаяПанель" id="417"/>
+			<ExtendedTooltip name="OutcomesByOfficeGBРасширеннаяПодсказка" id="418"/>
+			<SearchStringAddition name="OutcomesByOfficeGBСтрокаПоиска" id="419">
+				<AdditionSource>
+					<Item>OutcomesByOfficeGB</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="OutcomesByOfficeGBСтрокаПоискаКонтекстноеМеню" id="420"/>
+				<ExtendedTooltip name="OutcomesByOfficeGBСтрокаПоискаРасширеннаяПодсказка" id="421"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="OutcomesByOfficeGBСостояниеПросмотра" id="422">
+				<AdditionSource>
+					<Item>OutcomesByOfficeGB</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="OutcomesByOfficeGBСостояниеПросмотраКонтекстноеМеню" id="423"/>
+				<ExtendedTooltip name="OutcomesByOfficeGBСостояниеПросмотраРасширеннаяПодсказка" id="424"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="OutcomesByOfficeGBУправлениеПоиском" id="425">
+				<AdditionSource>
+					<Item>OutcomesByOfficeGB</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="OutcomesByOfficeGBУправлениеПоискомКонтекстноеМеню" id="426"/>
+				<ExtendedTooltip name="OutcomesByOfficeGBУправлениеПоискомРасширеннаяПодсказка" id="427"/>
 			</SearchControlAddition>
 		</Table>
 		<Table name="OutcomesByRetail" id="332">
@@ -795,6 +840,56 @@
 				<ContextMenu name="TradeDocsInBillsУправлениеПоискомКонтекстноеМеню" id="369"/>
 				<ExtendedTooltip name="TradeDocsInBillsУправлениеПоискомРасширеннаяПодсказка" id="370"/>
 			</SearchControlAddition>
+		</Table>
+		<Table name="DateList" id="396">
+			<Representation>List</Representation>
+			<Header>false</Header>
+			<HorizontalLines>false</HorizontalLines>
+			<VerticalLines>false</VerticalLines>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<DataPath>DateList</DataPath>
+			<RowPictureDataPath>DateList.Picture</RowPictureDataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>DateList</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="DateListКонтекстноеМеню" id="397"/>
+			<AutoCommandBar name="DateListКоманднаяПанель" id="398"/>
+			<ExtendedTooltip name="DateListРасширеннаяПодсказка" id="399"/>
+			<SearchStringAddition name="DateListСтрокаПоиска" id="400">
+				<AdditionSource>
+					<Item>DateList</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="DateListСтрокаПоискаКонтекстноеМеню" id="401"/>
+				<ExtendedTooltip name="DateListСтрокаПоискаРасширеннаяПодсказка" id="402"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="DateListСостояниеПросмотра" id="403">
+				<AdditionSource>
+					<Item>DateList</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="DateListСостояниеПросмотраКонтекстноеМеню" id="404"/>
+				<ExtendedTooltip name="DateListСостояниеПросмотраРасширеннаяПодсказка" id="405"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="DateListУправлениеПоиском" id="406">
+				<AdditionSource>
+					<Item>DateList</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="DateListУправлениеПоискомКонтекстноеМеню" id="407"/>
+				<ExtendedTooltip name="DateListУправлениеПоискомРасширеннаяПодсказка" id="408"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<InputField name="DateListЗначение" id="409">
+					<DataPath>DateList.Value</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="DateListЗначениеКонтекстноеМеню" id="410"/>
+					<ExtendedTooltip name="DateListЗначениеРасширеннаяПодсказка" id="411"/>
+				</InputField>
+			</ChildItems>
 		</Table>
 	</ChildItems>
 	<Attributes>
@@ -1285,6 +1380,50 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Dens</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="Stage" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Stage</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>4</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="DateList" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Date list</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueListType</v8:Type>
+			</Type>
+			<UseAlways>
+				<Field>DateList.ValueType</Field>
+				<Field>DateList.Presentation</Field>
+				<Field>DateList.Picture</Field>
+				<Field>DateList.Check</Field>
+			</UseAlways>
+		</Attribute>
+		<Attribute name="OutcomesByOfficeGB" id="18">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Outcomes by office GB</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
