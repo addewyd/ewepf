@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
 	<Width>800</Width>
+	<AutoSaveDataInSettings>Use</AutoSaveDataInSettings>
+	<SaveDataInSettings>UseList</SaveDataInSettings>
 	<Customizable>false</Customizable>
 	<CommandBarLocation>Top</CommandBarLocation>
 	<ScalingMode>Compact</ScalingMode>
@@ -8,6 +10,7 @@
 	<Events>
 		<Event name="OnOpen">ПриОткрытии</Event>
 		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
+		<Event name="OnClose">ПриЗакрытии</Event>
 	</Events>
 	<ChildItems>
 		<UsualGroup name="WholeG0" id="179">
@@ -18,6 +21,7 @@
 				</v8:item>
 			</ToolTip>
 			<Group>Vertical</Group>
+			<BackColor>#FFFF99</BackColor>
 			<ExtendedTooltip name="WholeG0РасширеннаяПодсказка" id="180"/>
 			<ChildItems>
 				<UsualGroup name="WholeG" id="172">
@@ -38,8 +42,11 @@
 								</v8:item>
 							</ToolTip>
 							<Width>80</Width>
+							<Height>18</Height>
 							<HorizontalStretch>false</HorizontalStretch>
+							<VerticalStretch>false</VerticalStretch>
 							<Group>Vertical</Group>
+							<BackColor>#F4E4FF</BackColor>
 							<ExtendedTooltip name="LeftGРасширеннаяПодсказка" id="66"/>
 							<ChildItems>
 								<UsualGroup name="LeftGTop" id="34">
@@ -49,10 +56,14 @@
 											<v8:content>Left g top</v8:content>
 										</v8:item>
 									</ToolTip>
-									<Width>800</Width>
-									<Height>8</Height>
+									<Width>100</Width>
+									<Height>5</Height>
+									<HorizontalStretch>false</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
 									<Group>Horizontal</Group>
+									<VerticalSpacing>None</VerticalSpacing>
 									<Representation>NormalSeparation</Representation>
+									<BackColor>#CCFFCC</BackColor>
 									<ExtendedTooltip name="LeftGTopРасширеннаяПодсказка" id="35"/>
 									<ChildItems>
 										<InputField name="ПолноеИмяФайла" id="1">
@@ -63,12 +74,14 @@
 													<v8:content>ПолноеИмяФайла</v8:content>
 												</v8:item>
 											</Title>
+											<TitleLocation>Left</TitleLocation>
 											<HorizontalAlign>Left</HorizontalAlign>
 											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
 											<GroupVerticalAlign>Top</GroupVerticalAlign>
-											<Width>27</Width>
+											<Width>37</Width>
 											<AutoMaxWidth>false</AutoMaxWidth>
 											<MaxWidth>27</MaxWidth>
+											<Height>1</Height>
 											<AutoMaxHeight>false</AutoMaxHeight>
 											<HorizontalStretch>true</HorizontalStretch>
 											<VerticalStretch>false</VerticalStretch>
@@ -78,6 +91,8 @@
 										<Button name="openfilebutton" id="4">
 											<Type>UsualButton</Type>
 											<Width>10</Width>
+											<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+											<GroupVerticalAlign>Top</GroupVerticalAlign>
 											<CommandName>Form.Command.OpenFile</CommandName>
 											<Title>
 												<v8:item>
@@ -97,22 +112,102 @@
 										</v8:item>
 									</ToolTip>
 									<Width>44</Width>
+									<Height>2</Height>
 									<HorizontalStretch>true</HorizontalStretch>
+									<VerticalStretch>false</VerticalStretch>
 									<GroupVerticalAlign>Top</GroupVerticalAlign>
 									<Group>Horizontal</Group>
 									<Representation>NormalSeparation</Representation>
+									<BackColor>#E2FFE9</BackColor>
 									<ExtendedTooltip name="LeftGMiddleРасширеннаяПодсказка" id="68"/>
 									<ChildItems>
 										<LabelDecoration name="Декорация3" id="181">
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<Height>1</Height>
+											<AutoMaxHeight>false</AutoMaxHeight>
+											<MaxHeight>1</MaxHeight>
+											<VerticalStretch>false</VerticalStretch>
 											<Title formatted="false">
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Декорация3</v8:content>
+													<v8:content>Дек ++ 3 ++</v8:content>
 												</v8:item>
 											</Title>
 											<ContextMenu name="Декорация3КонтекстноеМеню" id="182"/>
 											<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="183"/>
 										</LabelDecoration>
+										<InputField name="ТекВариантРасчетаНалогов" id="428">
+											<DataPath>ТекВариантРасчетаНалогов</DataPath>
+											<ContextMenu name="ТекВариантРасчетаНалоговКонтекстноеМеню" id="429"/>
+											<ExtendedTooltip name="ТекВариантРасчетаНалоговРасширеннаяПодсказка" id="430"/>
+										</InputField>
+									</ChildItems>
+								</UsualGroup>
+								<UsualGroup name="Группа1" id="457">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Группа1</v8:content>
+										</v8:item>
+									</Title>
+									<Width>80</Width>
+									<Group>Horizontal</Group>
+									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="458"/>
+									<ChildItems>
+										<LabelDecoration name="Декорация12" id="459">
+											<Title formatted="false">
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Gr1</v8:content>
+												</v8:item>
+											</Title>
+											<ContextMenu name="Декорация12КонтекстноеМеню" id="460"/>
+											<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="461"/>
+										</LabelDecoration>
+										<UsualGroup name="Группа2" id="462">
+											<Group>Vertical</Group>
+											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="463"/>
+											<ChildItems>
+												<InputField name="ВыбКонтрагент" id="468">
+													<DataPath>ВыбКонтрагент</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>16</MaxWidth>
+													<HorizontalStretch>false</HorizontalStretch>
+													<ContextMenu name="ВыбКонтрагентКонтекстноеМеню" id="469"/>
+													<ExtendedTooltip name="ВыбКонтрагентРасширеннаяПодсказка" id="470"/>
+												</InputField>
+												<InputField name="ВыбДоговорГСМ" id="471">
+													<DataPath>ВыбДоговорГСМ</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>19</MaxWidth>
+													<ContextMenu name="ВыбДоговорГСМКонтекстноеМеню" id="472"/>
+													<ExtendedTooltip name="ВыбДоговорГСМРасширеннаяПодсказка" id="473"/>
+												</InputField>
+												<InputField name="ВыбДоговорТовар" id="474">
+													<DataPath>ВыбДоговорТовар</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<MaxWidth>18</MaxWidth>
+													<ContextMenu name="ВыбДоговорТоварКонтекстноеМеню" id="475"/>
+													<ExtendedTooltip name="ВыбДоговорТоварРасширеннаяПодсказка" id="476"/>
+												</InputField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Группа3" id="464">
+											<Group>Vertical</Group>
+											<ExtendedTooltip name="Группа3РасширеннаяПодсказка" id="465"/>
+											<ChildItems>
+												<CheckBoxField name="ФлагБухУчет" id="485">
+													<DataPath>ФлагБухУчет</DataPath>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ФлагБухУчетКонтекстноеМеню" id="486"/>
+													<ExtendedTooltip name="ФлагБухУчетРасширеннаяПодсказка" id="487"/>
+												</CheckBoxField>
+											</ChildItems>
+										</UsualGroup>
+										<UsualGroup name="Группа4" id="466">
+											<Group>Vertical</Group>
+											<ExtendedTooltip name="Группа4РасширеннаяПодсказка" id="467"/>
+										</UsualGroup>
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="LeftBottom" id="268">
@@ -123,10 +218,11 @@
 										</v8:item>
 									</ToolTip>
 									<Width>80</Width>
-									<Height>16</Height>
+									<Height>10</Height>
 									<HorizontalStretch>false</HorizontalStretch>
 									<VerticalStretch>false</VerticalStretch>
 									<Group>Horizontal</Group>
+									<BackColor>#CCFFFF</BackColor>
 									<ExtendedTooltip name="LeftBottomРасширеннаяПодсказка" id="269"/>
 									<ChildItems>
 										<UsualGroup name="LeftBottomLeft" id="270">
@@ -137,22 +233,69 @@
 												</v8:item>
 											</ToolTip>
 											<Width>58</Width>
-											<Height>9</Height>
+											<Height>5</Height>
 											<HorizontalStretch>false</HorizontalStretch>
 											<VerticalStretch>false</VerticalStretch>
 											<Group>Vertical</Group>
+											<BackColor>#FFFF99</BackColor>
 											<ExtendedTooltip name="LeftBottomLeftРасширеннаяПодсказка" id="271"/>
 											<ChildItems>
-												<LabelDecoration name="Декорация4" id="274">
-													<Title formatted="false">
+												<UsualGroup name="Группа5" id="477">
+													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Для продажи по переливам</v8:content>
+															<v8:content>Гр5</v8:content>
 														</v8:item>
 													</Title>
-													<ContextMenu name="Декорация4КонтекстноеМеню" id="275"/>
-													<ExtendedTooltip name="Декорация4РасширеннаяПодсказка" id="276"/>
-												</LabelDecoration>
+													<Group>Horizontal</Group>
+													<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="478"/>
+													<ChildItems>
+														<InputField name="ВыбКонтрагентДляПереливов" id="479">
+															<DataPath>ВыбКонтрагентДляПереливов</DataPath>
+															<AutoMaxWidth>false</AutoMaxWidth>
+															<MaxWidth>10</MaxWidth>
+															<ContextMenu name="ВыбКонтрагентДляПереливовКонтекстноеМеню" id="480"/>
+															<ExtendedTooltip name="ВыбКонтрагентДляПереливовРасширеннаяПодсказка" id="481"/>
+														</InputField>
+														<InputField name="ВыбДоговорКонтрагентаДляПереливов" id="482">
+															<DataPath>ВыбДоговорКонтрагентаДляПереливов</DataPath>
+															<ContextMenu name="ВыбДоговорКонтрагентаДляПереливовКонтекстноеМеню" id="483"/>
+															<ExtendedTooltip name="ВыбДоговорКонтрагентаДляПереливовРасширеннаяПодсказка" id="484"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="lblb" id="431">
+													<Title>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Lblb</v8:content>
+														</v8:item>
+													</Title>
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Lblb</v8:content>
+														</v8:item>
+													</ToolTip>
+													<ExtendedTooltip name="lblbРасширеннаяПодсказка" id="432"/>
+													<ChildItems>
+														<LabelDecoration name="lblbdec" id="433">
+															<Title formatted="false">
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Lblbdec</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="lblbdecКонтекстноеМеню" id="434"/>
+															<ExtendedTooltip name="lblbdecРасширеннаяПодсказка" id="435"/>
+														</LabelDecoration>
+														<InputField name="ВыбСклад" id="436">
+															<DataPath>ВыбСклад</DataPath>
+															<ContextMenu name="ВыбСкладКонтекстноеМеню" id="437"/>
+															<ExtendedTooltip name="ВыбСкладРасширеннаяПодсказка" id="438"/>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
 											</ChildItems>
 										</UsualGroup>
 										<UsualGroup name="LeftBottomRight" id="272">
@@ -172,6 +315,7 @@
 											<Height>8</Height>
 											<HorizontalStretch>false</HorizontalStretch>
 											<VerticalStretch>false</VerticalStretch>
+											<BackColor>#D9DFFF</BackColor>
 											<ExtendedTooltip name="LeftBottomRightРасширеннаяПодсказка" id="273"/>
 											<ChildItems>
 												<LabelDecoration name="Декорация1" id="393">
@@ -245,7 +389,10 @@
 									<v8:content>Right G</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Height>18</Height>
+							<VerticalStretch>false</VerticalStretch>
 							<Group>Horizontal</Group>
+							<BackColor>#FFDDD4</BackColor>
 							<ExtendedTooltip name="RightGРасширеннаяПодсказка" id="185"/>
 							<ChildItems>
 								<Table name="ТИтоги" id="277">
@@ -291,6 +438,18 @@
 											<ContextMenu name="ТИтогиВидДвиженияКонтекстноеМеню" id="291"/>
 											<ExtendedTooltip name="ТИтогиВидДвиженияРасширеннаяПодсказка" id="292"/>
 										</InputField>
+										<InputField name="ТИтогиТовар" id="491">
+											<DataPath>ТИтоги.Товар</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТИтогиТоварКонтекстноеМеню" id="492"/>
+											<ExtendedTooltip name="ТИтогиТоварРасширеннаяПодсказка" id="493"/>
+										</InputField>
+										<InputField name="ТИтогиКолво" id="494">
+											<DataPath>ТИтоги.Колво</DataPath>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ТИтогиКолвоКонтекстноеМеню" id="495"/>
+											<ExtendedTooltip name="ТИтогиКолвоРасширеннаяПодсказка" id="496"/>
+										</InputField>
 									</ChildItems>
 								</Table>
 							</ChildItems>
@@ -312,6 +471,7 @@
 					</ToolTip>
 					<Group>Horizontal</Group>
 					<Representation>None</Representation>
+					<BackColor>#E0D7FF</BackColor>
 					<ExtendedTooltip name="MainMiddleРасширеннаяПодсказка" id="37"/>
 					<ChildItems>
 						<LabelDecoration name="Декорация2" id="49">
@@ -381,12 +541,14 @@
 								</InputField>
 								<InputField name="ТабФайлФКодАЗС" id="96">
 									<DataPath>ТабФайл.КодАЗС</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ТабФайлФКодАЗСКонтекстноеМеню" id="97"/>
 									<ExtendedTooltip name="ТабФайлФКодАЗСРасширеннаяПодсказка" id="98"/>
 								</InputField>
 								<InputField name="ТабФайлФСклад" id="99">
 									<DataPath>ТабФайл.Склад</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ТабФайлФСкладКонтекстноеМеню" id="100"/>
 									<ExtendedTooltip name="ТабФайлФСкладРасширеннаяПодсказка" id="101"/>
@@ -417,6 +579,7 @@
 								</InputField>
 								<InputField name="ТабФайлФФормаОплатыДляДокумента" id="114">
 									<DataPath>ТабФайл.ФормаОплатыДляДокумента</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ТабФайлФФормаОплатыДляДокументаКонтекстноеМеню" id="115"/>
 									<ExtendedTooltip name="ТабФайлФФормаОплатыДляДокументаРасширеннаяПодсказка" id="116"/>
@@ -435,6 +598,7 @@
 								</InputField>
 								<CheckBoxField name="ТабФайлФЭтоГСМ" id="123">
 									<DataPath>ТабФайл.ЭтоГСМ</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ТабФайлФЭтоГСМКонтекстноеМеню" id="124"/>
@@ -496,6 +660,7 @@
 								</InputField>
 								<InputField name="ТабФайлФФайлЗагрузки" id="150">
 									<DataPath>ТабФайл.ФайлЗагрузки</DataPath>
+									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ТабФайлФФайлЗагрузкиКонтекстноеМеню" id="151"/>
 									<ExtendedTooltip name="ТабФайлФФайлЗагрузкиРасширеннаяПодсказка" id="152"/>
@@ -515,6 +680,7 @@
 					<Height>3</Height>
 					<Group>Horizontal</Group>
 					<Representation>None</Representation>
+					<BackColor>#C7DFFF</BackColor>
 					<ExtendedTooltip name="MainBottomРасширеннаяПодсказка" id="41"/>
 					<ChildItems>
 						<Button name="ReadFileButton" id="38">
@@ -550,9 +716,18 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
+		<LabelDecoration name="Декорация7" id="442">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>IBD</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация7КонтекстноеМеню" id="443"/>
+			<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="444"/>
+		</LabelDecoration>
 		<Table name="IncomesByDischarge" id="293">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>IncomesByDischarge</DataPath>
@@ -591,9 +766,18 @@
 				<ExtendedTooltip name="IncomesByDischargeУправлениеПоискомРасширеннаяПодсказка" id="305"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация8" id="445">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>iobr</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация8КонтекстноеМеню" id="446"/>
+			<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="447"/>
+		</LabelDecoration>
 		<Table name="ItemOutcomesByRetail" id="306">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>ItemOutcomesByRetail</DataPath>
@@ -644,7 +828,6 @@
 		</LabelDecoration>
 		<Table name="OutcomesByOffice" id="319">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>OutcomesByOffice</DataPath>
@@ -683,9 +866,18 @@
 				<ExtendedTooltip name="OutcomesByOfficeУправлениеПоискомРасширеннаяПодсказка" id="331"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация9" id="448">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>obogb</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация9КонтекстноеМеню" id="449"/>
+			<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="450"/>
+		</LabelDecoration>
 		<Table name="OutcomesByOfficeGB" id="415">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>OutcomesByOfficeGB</DataPath>
@@ -718,9 +910,18 @@
 				<ExtendedTooltip name="OutcomesByOfficeGBУправлениеПоискомРасширеннаяПодсказка" id="427"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация10" id="451">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>obr</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация10КонтекстноеМеню" id="452"/>
+			<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="453"/>
+		</LabelDecoration>
 		<Table name="OutcomesByRetail" id="332">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>OutcomesByRetail</DataPath>
@@ -759,9 +960,18 @@
 				<ExtendedTooltip name="OutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="344"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация11" id="454">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>tdia</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация11КонтекстноеМеню" id="455"/>
+			<ExtendedTooltip name="Декорация11РасширеннаяПодсказка" id="456"/>
+		</LabelDecoration>
 		<Table name="TradeDocsInActs" id="345">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>TradeDocsInActs</DataPath>
@@ -800,9 +1010,18 @@
 				<ExtendedTooltip name="TradeDocsInActsУправлениеПоискомРасширеннаяПодсказка" id="357"/>
 			</SearchControlAddition>
 		</Table>
+		<LabelDecoration name="Декорация6" id="439">
+			<Title formatted="false">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>In bills</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="Декорация6КонтекстноеМеню" id="440"/>
+			<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="441"/>
+		</LabelDecoration>
 		<Table name="TradeDocsInBills" id="358">
 			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>TradeDocsInBills</DataPath>
@@ -846,7 +1065,6 @@
 			<Header>false</Header>
 			<HorizontalLines>false</HorizontalLines>
 			<VerticalLines>false</VerticalLines>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<DataPath>DateList</DataPath>
 			<RowPictureDataPath>DateList.Picture</RowPictureDataPath>
 			<Title>
@@ -886,6 +1104,7 @@
 				<InputField name="DateListЗначение" id="409">
 					<DataPath>DateList.Value</DataPath>
 					<EditMode>EnterOnInput</EditMode>
+					<BackColor>#9EFF9A</BackColor>
 					<ContextMenu name="DateListЗначениеКонтекстноеМеню" id="410"/>
 					<ExtendedTooltip name="DateListЗначениеРасширеннаяПодсказка" id="411"/>
 				</InputField>
@@ -913,6 +1132,9 @@
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
 			</Type>
+			<Save>
+				<Field>ПолноеИмяФайла</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="мТехПрокачка" id="3">
 			<Title>
@@ -1097,11 +1319,7 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>20</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
+						<v8:Type>cfg:CatalogRef.Номенклатура</v8:Type>
 					</Type>
 				</Column>
 				<Column name="ЭтоГСМ" id="13">
@@ -1139,7 +1357,11 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.ЕдиницыИзмерения</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 				<Column name="Объем" id="16">
@@ -1198,7 +1420,7 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:EnumRef.СтавкиНДС</v8:Type>
+						<v8:Type>cfg:CatalogRef.СтавкиНДС</v8:Type>
 					</Type>
 				</Column>
 				<Column name="НДС" id="20">
@@ -1313,9 +1535,40 @@
 					<Type>
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
-							<v8:Length>10</v8:Length>
+							<v8:Length>8</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Товар" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Товар</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>20</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Колво" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Колво</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>20</v8:Digits>
+							<v8:FractionDigits>7</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
 					</Type>
 				</Column>
 			</Columns>
@@ -1429,6 +1682,107 @@
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ТекВариантРасчетаНалогов" id="19">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тек вариант расчета налогов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ВариантыРасчетаНалогов</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ВыбСклад" id="20">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб склад</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>ВыбСклад</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыбКонтрагент" id="21">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб контрагент</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВыбДоговорГСМ" id="22">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб договор ГСМ</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВыбДоговорТовар" id="23">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб договор товар</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВыбКонтрагентДляПереливов" id="24">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб контрагент для переливов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ВыбДоговорКонтрагентаДляПереливов" id="25">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб договор контрагента для переливов</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.ДоговорыКонтрагентов</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+		</Attribute>
+		<Attribute name="ФлагБухУчет" id="26">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Флаг бух учет</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<SavedData>true</SavedData>
+			<Save>
+				<Field>ФлагБухУчет</Field>
+			</Save>
 		</Attribute>
 	</Attributes>
 	<Commands>
