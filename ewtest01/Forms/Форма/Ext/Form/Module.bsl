@@ -6,8 +6,6 @@ var tables6;
 &НаКлиенте
 procedure OpenFile(command)
 	
-	Сообщить("CP01-", СтатусСообщения.Внимание);
-	
 	ДиалогФыбораФайла = Новый ДиалогВыбораФайла(РежимДиалогаВыбораФайла.Открытие);
 	ДиалогФыбораФайла.Фильтр = "XML (*.xml)|*.xml";
 	ДиалогФыбораФайла.Заголовок = "Выберите файл";                                         
@@ -17,6 +15,9 @@ procedure OpenFile(command)
    		// Действия, выполняемые тогда, когда файл выбран.
 		ПолноеИмяФайла = ДиалогФыбораФайла.ПолноеИмяФайла;
 		stage = 1;
+		message("stage 1");
+		//ReadFile.Доступность = true;
+
 	КонецЕсли;	
 	
 endProcedure
@@ -24,25 +25,26 @@ endProcedure
 &НаСервере
 Процедура ПриОткрытииНаСервере()
 	// Вставить содержимое обработчика.
-	Message("SOpen");
+	//Message("SOpen");
 	Message("stage " + stage);
 	RestoreOptions();
+	//ReadOrdersButton.Доступность = false;
 КонецПроцедуры
 
 &НаСервере
 Процедура ПриСозданииНаСервере(Отказ, СтандартнаяОбработка)
 	// Вставить содержимое обработчика.
-	Message("Start");
+	//Message("Start");
 КонецПроцедуры
 
 &НаКлиенте
 Процедура ПриОткрытии(Отказ)
-	Сообщить("COpen", СтатусСообщения.Внимание);	
 	Stage = 0;
+	message("stage 0");
 	ПриОткрытииНаСервере();
 	СоздатьТаблицы();
 	
-	Сообщить(мТехПрокачка, СтатусСообщения.Внимание);	
+//	Сообщить(мТехПрокачка, СтатусСообщения.Внимание);	
 	
 КонецПроцедуры
 
@@ -52,7 +54,10 @@ Procedure ReadFile(command)
 	
 	if TrimAll(ПолноеИмяФайла) <> "" then
 		stage = 1;
+		message("stage 1");
 	endif;
+	
+	//ReadOrdersButton.Доступность = false;
 	
 	if stage < 1 then
 		Message("DataPaket does not chosen");
@@ -60,17 +65,20 @@ Procedure ReadFile(command)
 	endif;
 	
 	Текст = Новый ЧтениеТекста(ПолноеИмяФайла);
-	Пока Истина Цикл
+	while true do
         Строка = Текст.ПрочитатьСтроку();
         Если Строка = Неопределено Тогда
             Прервать;
 		Иначе
 			XmlString = XmlString + Строка;
-			Stage = 2;
+			
         КонецЕсли;
-	КонецЦикла;
-	
+	enddo;
+	Stage = 2;
+	message("stage 2");	
 	ЧитатьДанныеСессии(XMLString, ПолноеИмяФайла);
+	//ReadOrdersButton.Доступность = true;
+
 EndProcedure	
 
 &НаКлиенте
@@ -121,6 +129,11 @@ Procedure ReadOrders(command)
 	ReadOrdersServer(xmlstrings);
 EndProcedure	
 
+&НаКлиенте
+Procedure CreateDocsCl(command)
+	ref = CreateDocs();
+	//ShowValue(,ref);
+EndProcedure	
 
 #КонецОбласти
 
@@ -215,7 +228,7 @@ function stonum(s)
 		ret = Число(СтрЗаменить(a,",","."));
 		//message("normal, s=|" + s + "|" + a + "|");
 	except
-		message("Exception, s=|" + s + "|" + a + "|");
+		//message("Exception, s=|" + s + "|" + a + "|");
 		ret = s;
 	endtry;
 	return ret;
@@ -514,6 +527,8 @@ endprocedure
 &НаСервере
 Функция РасчетНДС(Товар,Сумма,ВыбДата,ss, ЧтениеИзФайла)
 	
+	// TODO
+	// СтавкаНДС выбирать из перечисления!
 	CatNDS = Справочники.СтавкиНДС;
 	nds = CatNDS.EmptyRef();
 	
@@ -615,7 +630,7 @@ procedure ContinueReadSessionData()
 			if fnd = CatStores.EmptyRef() then
 			else
 			endif;
-			rec.Склад=fnd;
+			rec.Склад = fnd;
 			ВыбСклад = fnd;
 			
 			er = CatWares.EmptyRef();
@@ -625,10 +640,13 @@ procedure ContinueReadSessionData()
 				rec.КодТовара=СокрЛП(str.FuelExtCode);
 				
 				ware = CatWares.НайтиПоРеквизиту("КодТопаз",СокрЛП(str.FuelExtCode));
+				
+				//ware.ЕдиницаИзмерения
+				
 				rec.Товар = ware;
-				rec.Объем=Число(СтрЗаменить(str.Volume,",","."));
+				rec.Объем = stonum(str.Volume);
 				Если (tablename="OutcomesByRetail") ИЛИ (tablename="OutcomesByOffice") Тогда
-					rec.Плотность=ПолучитьПлотностьГСМ(str.КодАЗС,str.НомерСмены,str.TankNum);
+					rec.Плотность = ПолучитьПлотностьГСМ(str.КодАЗС,str.НомерСмены,str.TankNum);
 					Если rec.Плотность = 0 Тогда  
 						Message("Не введены данные о плотности!!! (Заполнение невозможно.)");
 						// ПолноеИмяФайлаПриИзменении();
@@ -638,10 +656,11 @@ procedure ContinueReadSessionData()
 					rec.ВидДвижения="Продажа";
 				Иначе
 					rec.Плотность=Число(СтрЗаменить(str.Density,",","."))/1000;	   
-					rec.ВидДвижения="Приход";
+					rec.ВидДвижения = "Приход";
 				КонецЕсли;	
-				rec.Колво=rec.Объем*rec.Плотность/1000;
-				rec.ЭтоГСМ=1;
+				rec.Колво = (rec.Объем*rec.Плотность) / 1000.0;
+				//message("amount |" +  rec.Колво + "|"+rec.Объем+ "|"+rec.Плотность);
+				rec.ЭтоГСМ = true;                          
 				СтавкаНДС="";                                                                                                                                        
 								
 			ИначеЕсли (tablename="ItemOutcomesByRetail") ИЛИ (tablename="ItemOutcomesByOffice") 
@@ -669,6 +688,7 @@ procedure ContinueReadSessionData()
 					rec.НДС = str.NdsAmount;
 					
 					// TODO!!!!
+					// выбирать из перечисления!
 					nds = CatNDS.НайтиПоРеквизиту("Ставка", СтавкаНДС);
 					//СпрСтавкиНДС=СоздатьОбъект("Справочник.СтавкиНДС");
 					//Если СпрСтавкиНДС.НайтиПоРеквизиту("Ставка",СтавкаНДС,1)=1 Тогда
@@ -676,7 +696,10 @@ procedure ContinueReadSessionData()
 					//Иначе
 					//	ТабФайл.СтавкаНДС = ПолучитьПустоеЗначение("Справочник.СтавкиНДС");  
 					//КонецЕсли;
+					
 					rec.СтавкаНДС = nds;
+					
+					
                     rec.Всего=str.Total;             
 					rec.ВидДвижения="Приход";
 				Иначе
@@ -692,6 +715,7 @@ procedure ContinueReadSessionData()
 			if rec.Товар <> er then
 				// TODO!!!
 				//ТабФайл.ЕдИзм=ТабФайл.Товар.ЕдиницаИзмеренияПоУмолчанию;
+				rec.ЕдИзм = rec.Товар.ЕдиницаИзмерения;
 			endif;			
 			
 			// Lab 021
@@ -734,11 +758,18 @@ procedure ContinueReadSessionData()
 					rec.Договор=?(rec.ЭтоГСМ,ВыбДоговорГСМ,ВыбДоговорТовар);
 				Иначе       
 					rec.КодКлиента = КодКонтрагента;
-					cc = CatContr.НайтиПоКоду(КодКонтрагента);
-					Если cc <> CatContr.EmptyRef() Тогда
+					message("client to find " + КодКонтрагента);
+					cc = CatContr.НайтиПоРеквизиту("КодТопаз", КодКонтрагента); // 15
+					cc = CatContr.НайтиПоКоду(КодКонтрагента + "     "); // 15
+					if cc = Undefined then
+						message("not found client undef ");
+					endif;
+					
+					Если cc <> CatContr.EmptyRef() and cc <> Undefined Тогда
 						rec.Клиент = cc;     
 						
-						Стр=0;
+						message("found client " + cc);
+						
 						Если false // TODO!!
 							//мДоговоры.НайтиЗначение(ЗначениеВСтрокуВнутр(ТабФайл.Клиент)
 							//+ЗначениеВСтрокуВнутр(ВыбФирма)
@@ -764,6 +795,7 @@ procedure ContinueReadSessionData()
 						
 					else
 						rec.Клиент = CatContr.EmptyRef();
+						message("client not found");
 					endif;
 					
 				endif;	
@@ -791,6 +823,7 @@ procedure ContinueReadSessionData()
 	ЗаполнитьИтоги(tabfile);
 	
 	ValueToFormAttribute(tabfile, "ТабФайл");
+	stage = 4;
 	
 endprocedure
 
@@ -798,10 +831,24 @@ endprocedure
 procedure ЗаполнитьИтоги(tabfile)
 	tsumm = FormAttributeToValue("ТИтоги");
 	tsumm.clear();
+	osumm = FormAttributeToValue("ОИтоги");
+	osumm.clear();
 	for each str in tabfile do
-		rec = tsumm.add();
-		rec.Товар = str.Товар;
-		rec.Колво = str.Колво;
+		if str.ЭтоГСМ then
+			rec = tsumm.add();
+			rec.ВидДвижения = str.ВидДвижения;
+			rec.Товар = str.Товар;
+			rec.Колво = str.Колво;
+		else
+			rec = osumm.add();
+			rec.ВидДвижения = str.ВидДвижения;
+			rec.ФормаОплаты = str.ФормаОплаты;
+			rec.Клиент = str.Клиент;
+			//rec.Колво = str.Колво;
+			rec.Всего = str.Всего;
+			
+		endif;
+		
 	enddo;
 	
 //	ТИтоги.Свернуть("ВидДвижения,Товар,ЕдИзм","Колво,Объем,ОбъемПрокачка,Сумма,НДС,Всего"); 
@@ -809,8 +856,16 @@ procedure ЗаполнитьИтоги(tabfile)
 
 	tsumm.Свернуть("ВидДвижения,Товар","Колво"); 
 	tsumm.Сортировать("ВидДвижения,Товар");   
+	
+//	фИтогиФормаОплаты.Свернуть("КонецСмены,Склад,ВидДвижения,ФормаОплаты,Клиент","Всего"); 
+//	фИтогиФормаОплаты.Сортировать("ВидДвижения,ФормаОплаты,Клиент");  
 
-	ValueToFormAttribute(tabfile,"ТИтоги");
+	osumm.Свернуть("ВидДвижения,ФормаОплаты,Клиент","Всего"); 
+
+	ValueToFormAttribute(tsumm,"ТИтоги");
+	ValueToFormAttribute(osumm,"ОИтоги");
+	
+	
 endprocedure
 
 
@@ -853,7 +908,7 @@ endprocedure
 	DataPacket = Док.FirstChild;
 	Если (DataPacket.ИмяУзла = "DataPaket") Тогда
 		AZSCode = DataPacket.GetAttribute("AZSCode");
-		Сообщить(AZSCode);
+		//Сообщить(AZSCode);
 		SessionList = DataPacket.GetElementByTagName("Sessions")[0].ChildNodes;
 		
 		For Each Session in SessionList Do
@@ -878,7 +933,7 @@ endprocedure
 					
 				    ТаблицаИзXML = new ТаблицаЗначений;
 					
-					Message("New Table " + Node.NodeName);
+					//Message("New Table " + Node.NodeName);
 					ColMap01.Insert(Node.NodeName, new Map);
 					Index01 = 0;
 					For Each StrNode in Node.ChildNodes Do
@@ -976,7 +1031,7 @@ endprocedure
 					
 					
 				EndIf; // table undef
-				Message("ColumnsCount " + ТаблицаИзXML.columns.count());
+				//Message("ColumnsCount " + ТаблицаИзXML.columns.count());
 				//for each Col in ТаблицаИзXML.columns do
 				//	Message("ColName " + col.Name);
 				//enddo;
@@ -1103,12 +1158,13 @@ endprocedure
 	For each kv in mXMLTableList do
 		tablename = kv.key;
 		table = kv.value;
-		message("Table " + tablename);
+		//message("Table " + tablename);
 		Если (tablename<>"OutcomesByRetail") И (tablename<>"OutcomesByOffice") И (tablename<>"ItemOutcomesByRetail") 
 			И (tablename<>"IncomesByDischarge") И (tablename<>"TradeDocsInActs") И (tablename<>"TradeDocsInBills") Тогда
 			Продолжить;
 		КонецЕсли;	 
 		Stage = 3;	
+		message("stage " + stage);
 		
 		if tablename = "OutcomesByOffice" then
 		    	//???		
@@ -1128,14 +1184,14 @@ endprocedure
 		endif;
 		// here by retail
 		// and by offices
-		Message("c " + tablename);
+		//Message("c " + tablename);
 		
 	enddo;
 	
 	For each kv in mXMLTableList do
 		tablename = kv.key;
 		table = kv.value;
-		message("Table " + tablename);
+		//message("Table " + tablename);
 		if not tables6.find(tablename) = Undefined then
 			ChangeRequisites(table, tablename);
 			ValueToFormAttribute(table, tablename);
@@ -1144,6 +1200,99 @@ endprocedure
 	enddo;
 
 КонецПроцедуры	
+
+&НаСервере
+function CreateDocs()
+	if stage < 4 then
+		message("files not parsed  yet");
+		return null;
+	endif;
+	
+	post = ?(DoPostDoc, DocumentWriteMode.Posting, DocumentWriteMode.Write);
+	
+	tabfile = FormAttributeToValue("ТабФайл");
+	for each str in tabfile do
+		
+		if str.ВидДвижения = "Приход" then
+			doc = Документы.ПеремещениеТоваров.CreateDocument();
+			doc.Дата = CurrentDate();
+						
+			if str.ЭтоГСМ then
+				doc.СкладОтправитель = ВыбСкладОтправитель;
+			else
+				doc.СкладОтправитель = ВыбСкладОтправительФасовка;
+			endif;	
+			doc.СкладПолучатель = str.Склад;
+			
+			// doc.Организация = Справочники.Организации.
+			
+			warep = doc.Товары.Добавить();
+			warep.Номенклатура = str.Товар;
+		//ware.Количество = ?(str.ЭтоГСМ, str.Объем, str.Колво);
+			warep.КоличествоУпаковок = str.Колво;
+			
+			try
+				doc.Write(post);
+				Message("written " + str.ВидДвижения + " ware: " + str.Товар.Наименование);
+			except
+				Message("write failed: " + ErrorDescription() + "| contr " + str.Клиент.Наименование + " "
+					+ str.ВидДвижения + " ware " +  str.Товар.Наименование);
+			endtry;
+			
+			
+		else	
+			
+			doc = Документы.РеализацияТоваровУслуг.CreateDocument();
+			doc.Дата = CurrentDate();
+		
+		//?
+			doc.Партнер = str.Клиент;
+		
+		//?
+			doc.Склад = ВыбСклад;
+		
+		//?
+		//doc.ХозяйственнаяОперация =   
+		//	Перечисления.ХозяйственныеОперации.??
+			
+		//			
+			doc.ЦенаВключаетНДС = true;
+			doc.НалогообложениеНДС = 
+				Перечисления.ТипыНалогообложенияНДС.ПродажаОблагаетсяНДС;
+			
+			doc.Склад = str.Склад;
+			
+		// doc.Менеджер = 	
+		
+			ware = doc.Товары.Добавить();
+			ware.Номенклатура = str.Товар;
+		//ware.Количество = ?(str.ЭтоГСМ, str.Объем, str.Колво);
+			ware.КоличествоУпаковок = str.Колво;
+			ware.Цена = str.Цена;
+		
+		// ware.Упаковка = 
+		
+		// TODO!!! 
+			ware.СтавкаНДС = Перечисления.СтавкиНДС.НДС18;
+			//  = str.СтавкаНДС
+		
+			//ware.Сумма = str.Сумма;
+			try
+				doc.Write(post);
+				Message("written " + str.ВидДвижения + " ware: " + str.Товар.Наименование);
+			except
+				Message("write failed: " + ErrorDescription() + "| contr " + str.Клиент.Наименование + " "
+					+ str.ВидДвижения + " ware " +  str.Товар.Наименование);
+			endtry;
+		
+		endif;
+	
+	enddo;
+	
+	
+	return null; // doc.ref;
+endfunction
+
 
 &НаСервере
 Процедура ПриЗакрытииНаСервере()

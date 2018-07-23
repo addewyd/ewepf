@@ -97,7 +97,7 @@
 											<Title>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
-													<v8:content>Open File</v8:content>
+													<v8:content>Открыть файл</v8:content>
 												</v8:item>
 											</Title>
 											<ExtendedTooltip name="openfilebuttonРасширеннаяПодсказка" id="5"/>
@@ -121,21 +121,6 @@
 									<BackColor>#E2FFE9</BackColor>
 									<ExtendedTooltip name="LeftGMiddleРасширеннаяПодсказка" id="68"/>
 									<ChildItems>
-										<LabelDecoration name="Декорация3" id="181">
-											<AutoMaxWidth>false</AutoMaxWidth>
-											<Height>1</Height>
-											<AutoMaxHeight>false</AutoMaxHeight>
-											<MaxHeight>1</MaxHeight>
-											<VerticalStretch>false</VerticalStretch>
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Дек ++ 3 ++</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="Декорация3КонтекстноеМеню" id="182"/>
-											<ExtendedTooltip name="Декорация3РасширеннаяПодсказка" id="183"/>
-										</LabelDecoration>
 										<InputField name="ТекВариантРасчетаНалогов" id="428">
 											<DataPath>ТекВариантРасчетаНалогов</DataPath>
 											<ContextMenu name="ТекВариантРасчетаНалоговКонтекстноеМеню" id="429"/>
@@ -154,16 +139,6 @@
 									<Group>Horizontal</Group>
 									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="458"/>
 									<ChildItems>
-										<LabelDecoration name="Декорация12" id="459">
-											<Title formatted="false">
-												<v8:item>
-													<v8:lang>ru</v8:lang>
-													<v8:content>Gr1</v8:content>
-												</v8:item>
-											</Title>
-											<ContextMenu name="Декорация12КонтекстноеМеню" id="460"/>
-											<ExtendedTooltip name="Декорация12РасширеннаяПодсказка" id="461"/>
-										</LabelDecoration>
 										<UsualGroup name="Группа2" id="462">
 											<Group>Vertical</Group>
 											<ExtendedTooltip name="Группа2РасширеннаяПодсказка" id="463"/>
@@ -279,20 +254,25 @@
 													</ToolTip>
 													<ExtendedTooltip name="lblbРасширеннаяПодсказка" id="432"/>
 													<ChildItems>
-														<LabelDecoration name="lblbdec" id="433">
-															<Title formatted="false">
-																<v8:item>
-																	<v8:lang>ru</v8:lang>
-																	<v8:content>Lblbdec</v8:content>
-																</v8:item>
-															</Title>
-															<ContextMenu name="lblbdecКонтекстноеМеню" id="434"/>
-															<ExtendedTooltip name="lblbdecРасширеннаяПодсказка" id="435"/>
-														</LabelDecoration>
 														<InputField name="ВыбСклад" id="436">
 															<DataPath>ВыбСклад</DataPath>
 															<ContextMenu name="ВыбСкладКонтекстноеМеню" id="437"/>
 															<ExtendedTooltip name="ВыбСкладРасширеннаяПодсказка" id="438"/>
+														</InputField>
+														<InputField name="ВыбГрузоотправитель" id="533">
+															<DataPath>ВыбГрузоотправитель</DataPath>
+															<ContextMenu name="ВыбГрузоотправительКонтекстноеМеню" id="534"/>
+															<ExtendedTooltip name="ВыбГрузоотправительРасширеннаяПодсказка" id="535"/>
+														</InputField>
+														<InputField name="ВыбСкладОтправитель" id="536">
+															<DataPath>ВыбСкладОтправитель</DataPath>
+															<ContextMenu name="ВыбСкладОтправительКонтекстноеМеню" id="537"/>
+															<ExtendedTooltip name="ВыбСкладОтправительРасширеннаяПодсказка" id="538"/>
+														</InputField>
+														<InputField name="ВыбСкладОтправительФасовка" id="539">
+															<DataPath>ВыбСкладОтправительФасовка</DataPath>
+															<ContextMenu name="ВыбСкладОтправительФасовкаКонтекстноеМеню" id="540"/>
+															<ExtendedTooltip name="ВыбСкладОтправительФасовкаРасширеннаяПодсказка" id="541"/>
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
@@ -318,16 +298,6 @@
 											<BackColor>#D9DFFF</BackColor>
 											<ExtendedTooltip name="LeftBottomRightРасширеннаяПодсказка" id="273"/>
 											<ChildItems>
-												<LabelDecoration name="Декорация1" id="393">
-													<Title formatted="false">
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Dens</v8:content>
-														</v8:item>
-													</Title>
-													<ContextMenu name="Декорация1КонтекстноеМеню" id="394"/>
-													<ExtendedTooltip name="Декорация1РасширеннаяПодсказка" id="395"/>
-												</LabelDecoration>
 												<Table name="Dens" id="380">
 													<Representation>List</Representation>
 													<Width>20</Width>
@@ -395,63 +365,148 @@
 							<BackColor>#FFDDD4</BackColor>
 							<ExtendedTooltip name="RightGРасширеннаяПодсказка" id="185"/>
 							<ChildItems>
-								<Table name="ТИтоги" id="277">
-									<Representation>List</Representation>
-									<AutoInsertNewRow>true</AutoInsertNewRow>
-									<EnableStartDrag>true</EnableStartDrag>
-									<EnableDrag>true</EnableDrag>
-									<DataPath>ТИтоги</DataPath>
-									<RowFilter xsi:nil="true"/>
-									<ContextMenu name="ТИтогиКонтекстноеМеню" id="278"/>
-									<AutoCommandBar name="ТИтогиКоманднаяПанель" id="279">
-										<Autofill>false</Autofill>
-									</AutoCommandBar>
-									<ExtendedTooltip name="ТИтогиРасширеннаяПодсказка" id="280"/>
-									<SearchStringAddition name="ТИтогиСтрокаПоиска" id="281">
-										<AdditionSource>
-											<Item>ТИтоги</Item>
-											<Type>SearchStringRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ТИтогиСтрокаПоискаКонтекстноеМеню" id="282"/>
-										<ExtendedTooltip name="ТИтогиСтрокаПоискаРасширеннаяПодсказка" id="283"/>
-									</SearchStringAddition>
-									<ViewStatusAddition name="ТИтогиСостояниеПросмотра" id="284">
-										<AdditionSource>
-											<Item>ТИтоги</Item>
-											<Type>ViewStatusRepresentation</Type>
-										</AdditionSource>
-										<ContextMenu name="ТИтогиСостояниеПросмотраКонтекстноеМеню" id="285"/>
-										<ExtendedTooltip name="ТИтогиСостояниеПросмотраРасширеннаяПодсказка" id="286"/>
-									</ViewStatusAddition>
-									<SearchControlAddition name="ТИтогиУправлениеПоиском" id="287">
-										<AdditionSource>
-											<Item>ТИтоги</Item>
-											<Type>SearchControl</Type>
-										</AdditionSource>
-										<ContextMenu name="ТИтогиУправлениеПоискомКонтекстноеМеню" id="288"/>
-										<ExtendedTooltip name="ТИтогиУправлениеПоискомРасширеннаяПодсказка" id="289"/>
-									</SearchControlAddition>
+								<UsualGroup name="Группа6" id="527">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Итоги ГСМ</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Группа6РасширеннаяПодсказка" id="528"/>
 									<ChildItems>
-										<InputField name="ТИтогиВидДвижения" id="290">
-											<DataPath>ТИтоги.ВидДвижения</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="ТИтогиВидДвиженияКонтекстноеМеню" id="291"/>
-											<ExtendedTooltip name="ТИтогиВидДвиженияРасширеннаяПодсказка" id="292"/>
-										</InputField>
-										<InputField name="ТИтогиТовар" id="491">
-											<DataPath>ТИтоги.Товар</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="ТИтогиТоварКонтекстноеМеню" id="492"/>
-											<ExtendedTooltip name="ТИтогиТоварРасширеннаяПодсказка" id="493"/>
-										</InputField>
-										<InputField name="ТИтогиКолво" id="494">
-											<DataPath>ТИтоги.Колво</DataPath>
-											<EditMode>EnterOnInput</EditMode>
-											<ContextMenu name="ТИтогиКолвоКонтекстноеМеню" id="495"/>
-											<ExtendedTooltip name="ТИтогиКолвоРасширеннаяПодсказка" id="496"/>
-										</InputField>
+										<Table name="ТИтоги" id="277">
+											<Representation>List</Representation>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>ТИтоги</DataPath>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ТИтогиКонтекстноеМеню" id="278"/>
+											<AutoCommandBar name="ТИтогиКоманднаяПанель" id="279">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ТИтогиРасширеннаяПодсказка" id="280"/>
+											<SearchStringAddition name="ТИтогиСтрокаПоиска" id="281">
+												<AdditionSource>
+													<Item>ТИтоги</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТИтогиСтрокаПоискаКонтекстноеМеню" id="282"/>
+												<ExtendedTooltip name="ТИтогиСтрокаПоискаРасширеннаяПодсказка" id="283"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ТИтогиСостояниеПросмотра" id="284">
+												<AdditionSource>
+													<Item>ТИтоги</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ТИтогиСостояниеПросмотраКонтекстноеМеню" id="285"/>
+												<ExtendedTooltip name="ТИтогиСостояниеПросмотраРасширеннаяПодсказка" id="286"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ТИтогиУправлениеПоиском" id="287">
+												<AdditionSource>
+													<Item>ТИтоги</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ТИтогиУправлениеПоискомКонтекстноеМеню" id="288"/>
+												<ExtendedTooltip name="ТИтогиУправлениеПоискомРасширеннаяПодсказка" id="289"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<InputField name="ТИтогиВидДвижения" id="290">
+													<DataPath>ТИтоги.ВидДвижения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТИтогиВидДвиженияКонтекстноеМеню" id="291"/>
+													<ExtendedTooltip name="ТИтогиВидДвиженияРасширеннаяПодсказка" id="292"/>
+												</InputField>
+												<InputField name="ТИтогиТовар" id="491">
+													<DataPath>ТИтоги.Товар</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТИтогиТоварКонтекстноеМеню" id="492"/>
+													<ExtendedTooltip name="ТИтогиТоварРасширеннаяПодсказка" id="493"/>
+												</InputField>
+												<InputField name="ТИтогиКолво" id="494">
+													<DataPath>ТИтоги.Колво</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ТИтогиКолвоКонтекстноеМеню" id="495"/>
+													<ExtendedTooltip name="ТИтогиКолвоРасширеннаяПодсказка" id="496"/>
+												</InputField>
+											</ChildItems>
+										</Table>
 									</ChildItems>
-								</Table>
+								</UsualGroup>
+								<UsualGroup name="Группа7" id="529">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Итоги Товары</v8:content>
+										</v8:item>
+									</Title>
+									<ExtendedTooltip name="Группа7РасширеннаяПодсказка" id="530"/>
+									<ChildItems>
+										<Table name="ОИтоги" id="502">
+											<Representation>List</Representation>
+											<AutoInsertNewRow>true</AutoInsertNewRow>
+											<EnableStartDrag>true</EnableStartDrag>
+											<EnableDrag>true</EnableDrag>
+											<DataPath>ОИтоги</DataPath>
+											<RowFilter xsi:nil="true"/>
+											<ContextMenu name="ОИтогиКонтекстноеМеню" id="503"/>
+											<AutoCommandBar name="ОИтогиКоманднаяПанель" id="504">
+												<Autofill>false</Autofill>
+											</AutoCommandBar>
+											<ExtendedTooltip name="ОИтогиРасширеннаяПодсказка" id="505"/>
+											<SearchStringAddition name="ОИтогиСтрокаПоиска" id="506">
+												<AdditionSource>
+													<Item>ОИтоги</Item>
+													<Type>SearchStringRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ОИтогиСтрокаПоискаКонтекстноеМеню" id="507"/>
+												<ExtendedTooltip name="ОИтогиСтрокаПоискаРасширеннаяПодсказка" id="508"/>
+											</SearchStringAddition>
+											<ViewStatusAddition name="ОИтогиСостояниеПросмотра" id="509">
+												<AdditionSource>
+													<Item>ОИтоги</Item>
+													<Type>ViewStatusRepresentation</Type>
+												</AdditionSource>
+												<ContextMenu name="ОИтогиСостояниеПросмотраКонтекстноеМеню" id="510"/>
+												<ExtendedTooltip name="ОИтогиСостояниеПросмотраРасширеннаяПодсказка" id="511"/>
+											</ViewStatusAddition>
+											<SearchControlAddition name="ОИтогиУправлениеПоиском" id="512">
+												<AdditionSource>
+													<Item>ОИтоги</Item>
+													<Type>SearchControl</Type>
+												</AdditionSource>
+												<ContextMenu name="ОИтогиУправлениеПоискомКонтекстноеМеню" id="513"/>
+												<ExtendedTooltip name="ОИтогиУправлениеПоискомРасширеннаяПодсказка" id="514"/>
+											</SearchControlAddition>
+											<ChildItems>
+												<InputField name="ОИтогиВидДвижения" id="515">
+													<DataPath>ОИтоги.ВидДвижения</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ОИтогиВидДвиженияКонтекстноеМеню" id="516"/>
+													<ExtendedTooltip name="ОИтогиВидДвиженияРасширеннаяПодсказка" id="517"/>
+												</InputField>
+												<InputField name="ОИтогиФормаОплаты" id="518">
+													<DataPath>ОИтоги.ФормаОплаты</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ОИтогиФормаОплатыКонтекстноеМеню" id="519"/>
+													<ExtendedTooltip name="ОИтогиФормаОплатыРасширеннаяПодсказка" id="520"/>
+												</InputField>
+												<InputField name="ОИтогиКлиент" id="521">
+													<DataPath>ОИтоги.Клиент</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ОИтогиКлиентКонтекстноеМеню" id="522"/>
+													<ExtendedTooltip name="ОИтогиКлиентРасширеннаяПодсказка" id="523"/>
+												</InputField>
+												<InputField name="ОИтогиВсего" id="524">
+													<DataPath>ОИтоги.Всего</DataPath>
+													<EditMode>EnterOnInput</EditMode>
+													<ContextMenu name="ОИтогиВсегоКонтекстноеМеню" id="525"/>
+													<ExtendedTooltip name="ОИтогиВсегоРасширеннаяПодсказка" id="526"/>
+												</InputField>
+											</ChildItems>
+										</Table>
+									</ChildItems>
+								</UsualGroup>
 							</ChildItems>
 						</UsualGroup>
 					</ChildItems>
@@ -474,16 +529,6 @@
 					<BackColor>#E0D7FF</BackColor>
 					<ExtendedTooltip name="MainMiddleРасширеннаяПодсказка" id="37"/>
 					<ChildItems>
-						<LabelDecoration name="Декорация2" id="49">
-							<Title formatted="false">
-								<v8:item>
-									<v8:lang>ru</v8:lang>
-									<v8:content>Декорация2</v8:content>
-								</v8:item>
-							</Title>
-							<ContextMenu name="Декорация2КонтекстноеМеню" id="50"/>
-							<ExtendedTooltip name="Декорация2РасширеннаяПодсказка" id="51"/>
-						</LabelDecoration>
 						<Table name="ТабФайлФ" id="52">
 							<Representation>List</Representation>
 							<AutoInsertNewRow>true</AutoInsertNewRow>
@@ -548,7 +593,6 @@
 								</InputField>
 								<InputField name="ТабФайлФСклад" id="99">
 									<DataPath>ТабФайл.Склад</DataPath>
-									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<ContextMenu name="ТабФайлФСкладКонтекстноеМеню" id="100"/>
 									<ExtendedTooltip name="ТабФайлФСкладРасширеннаяПодсказка" id="101"/>
@@ -598,7 +642,6 @@
 								</InputField>
 								<CheckBoxField name="ТабФайлФЭтоГСМ" id="123">
 									<DataPath>ТабФайл.ЭтоГСМ</DataPath>
-									<Visible>false</Visible>
 									<EditMode>EnterOnInput</EditMode>
 									<CheckBoxType>Auto</CheckBoxType>
 									<ContextMenu name="ТабФайлФЭтоГСМКонтекстноеМеню" id="124"/>
@@ -678,6 +721,7 @@
 					</ToolTip>
 					<Width>800</Width>
 					<Height>3</Height>
+					<HorizontalStretch>false</HorizontalStretch>
 					<Group>Horizontal</Group>
 					<Representation>None</Representation>
 					<BackColor>#C7DFFF</BackColor>
@@ -689,7 +733,7 @@
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Read File</v8:content>
+									<v8:content>Загрузить</v8:content>
 								</v8:item>
 							</Title>
 							<ExtendedTooltip name="ReadFileButtonРасширеннаяПодсказка" id="39"/>
@@ -705,6 +749,31 @@
 							</Title>
 							<ExtendedTooltip name="ReadOrdersButtonРасширеннаяПодсказка" id="86"/>
 						</Button>
+						<Button name="CreateDocsBut" id="497">
+							<Type>UsualButton</Type>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CommandName>Form.Command.CreateDocs</CommandName>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Записать документы</v8:content>
+								</v8:item>
+							</Title>
+							<ExtendedTooltip name="CreateDocsButРасширеннаяПодсказка" id="498"/>
+						</Button>
+						<CheckBoxField name="DoPostDoc" id="499">
+							<DataPath>DoPostDoc</DataPath>
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Провести</v8:content>
+								</v8:item>
+							</Title>
+							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="DoPostDocКонтекстноеМеню" id="500"/>
+							<ExtendedTooltip name="DoPostDocРасширеннаяПодсказка" id="501"/>
+						</CheckBoxField>
 						<Button name="Закрыть" id="6">
 							<Type>UsualButton</Type>
 							<GroupHorizontalAlign>Left</GroupHorizontalAlign>
@@ -716,400 +785,416 @@
 				</UsualGroup>
 			</ChildItems>
 		</UsualGroup>
-		<LabelDecoration name="Декорация7" id="442">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>IBD</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация7КонтекстноеМеню" id="443"/>
-			<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="444"/>
-		</LabelDecoration>
-		<Table name="IncomesByDischarge" id="293">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>IncomesByDischarge</DataPath>
+		<UsualGroup name="Группа8" id="531">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>IncomesByDischarge</v8:content>
+					<v8:content>ДЕБУГ</v8:content>
 				</v8:item>
 			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="IncomesByDischargeКонтекстноеМеню" id="294"/>
-			<AutoCommandBar name="IncomesByDischargeКоманднаяПанель" id="295"/>
-			<ExtendedTooltip name="IncomesByDischargeРасширеннаяПодсказка" id="296"/>
-			<SearchStringAddition name="IncomesByDischargeСтрокаПоиска" id="297">
-				<AdditionSource>
-					<Item>IncomesByDischarge</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="IncomesByDischargeСтрокаПоискаКонтекстноеМеню" id="298"/>
-				<ExtendedTooltip name="IncomesByDischargeСтрокаПоискаРасширеннаяПодсказка" id="299"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="IncomesByDischargeСостояниеПросмотра" id="300">
-				<AdditionSource>
-					<Item>IncomesByDischarge</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="IncomesByDischargeСостояниеПросмотраКонтекстноеМеню" id="301"/>
-				<ExtendedTooltip name="IncomesByDischargeСостояниеПросмотраРасширеннаяПодсказка" id="302"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="IncomesByDischargeУправлениеПоиском" id="303">
-				<AdditionSource>
-					<Item>IncomesByDischarge</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="IncomesByDischargeУправлениеПоискомКонтекстноеМеню" id="304"/>
-				<ExtendedTooltip name="IncomesByDischargeУправлениеПоискомРасширеннаяПодсказка" id="305"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация8" id="445">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>iobr</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация8КонтекстноеМеню" id="446"/>
-			<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="447"/>
-		</LabelDecoration>
-		<Table name="ItemOutcomesByRetail" id="306">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>ItemOutcomesByRetail</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>IncomesByDischarge</v8:content>
-				</v8:item>
-			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="ItemOutcomesByRetailКонтекстноеМеню" id="307"/>
-			<AutoCommandBar name="ItemOutcomesByRetailКоманднаяПанель" id="308"/>
-			<ExtendedTooltip name="ItemOutcomesByRetailРасширеннаяПодсказка" id="309"/>
-			<SearchStringAddition name="ItemOutcomesByRetailСтрокаПоиска" id="310">
-				<AdditionSource>
-					<Item>ItemOutcomesByRetail</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ItemOutcomesByRetailСтрокаПоискаКонтекстноеМеню" id="311"/>
-				<ExtendedTooltip name="ItemOutcomesByRetailСтрокаПоискаРасширеннаяПодсказка" id="312"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ItemOutcomesByRetailСостояниеПросмотра" id="313">
-				<AdditionSource>
-					<Item>ItemOutcomesByRetail</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ItemOutcomesByRetailСостояниеПросмотраКонтекстноеМеню" id="314"/>
-				<ExtendedTooltip name="ItemOutcomesByRetailСостояниеПросмотраРасширеннаяПодсказка" id="315"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ItemOutcomesByRetailУправлениеПоиском" id="316">
-				<AdditionSource>
-					<Item>ItemOutcomesByRetail</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ItemOutcomesByRetailУправлениеПоискомКонтекстноеМеню" id="317"/>
-				<ExtendedTooltip name="ItemOutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="318"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация5" id="412">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Office</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация5КонтекстноеМеню" id="413"/>
-			<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="414"/>
-		</LabelDecoration>
-		<Table name="OutcomesByOffice" id="319">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>OutcomesByOffice</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>OutcomesByOffice</v8:content>
-				</v8:item>
-			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="OutcomesByOfficeКонтекстноеМеню" id="320"/>
-			<AutoCommandBar name="OutcomesByOfficeКоманднаяПанель" id="321"/>
-			<ExtendedTooltip name="OutcomesByOfficeРасширеннаяПодсказка" id="322"/>
-			<SearchStringAddition name="OutcomesByOfficeСтрокаПоиска" id="323">
-				<AdditionSource>
-					<Item>OutcomesByOffice</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeСтрокаПоискаКонтекстноеМеню" id="324"/>
-				<ExtendedTooltip name="OutcomesByOfficeСтрокаПоискаРасширеннаяПодсказка" id="325"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="OutcomesByOfficeСостояниеПросмотра" id="326">
-				<AdditionSource>
-					<Item>OutcomesByOffice</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeСостояниеПросмотраКонтекстноеМеню" id="327"/>
-				<ExtendedTooltip name="OutcomesByOfficeСостояниеПросмотраРасширеннаяПодсказка" id="328"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="OutcomesByOfficeУправлениеПоиском" id="329">
-				<AdditionSource>
-					<Item>OutcomesByOffice</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeУправлениеПоискомКонтекстноеМеню" id="330"/>
-				<ExtendedTooltip name="OutcomesByOfficeУправлениеПоискомРасширеннаяПодсказка" id="331"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация9" id="448">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>obogb</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация9КонтекстноеМеню" id="449"/>
-			<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="450"/>
-		</LabelDecoration>
-		<Table name="OutcomesByOfficeGB" id="415">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>OutcomesByOfficeGB</DataPath>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="OutcomesByOfficeGBКонтекстноеМеню" id="416"/>
-			<AutoCommandBar name="OutcomesByOfficeGBКоманднаяПанель" id="417"/>
-			<ExtendedTooltip name="OutcomesByOfficeGBРасширеннаяПодсказка" id="418"/>
-			<SearchStringAddition name="OutcomesByOfficeGBСтрокаПоиска" id="419">
-				<AdditionSource>
-					<Item>OutcomesByOfficeGB</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeGBСтрокаПоискаКонтекстноеМеню" id="420"/>
-				<ExtendedTooltip name="OutcomesByOfficeGBСтрокаПоискаРасширеннаяПодсказка" id="421"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="OutcomesByOfficeGBСостояниеПросмотра" id="422">
-				<AdditionSource>
-					<Item>OutcomesByOfficeGB</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeGBСостояниеПросмотраКонтекстноеМеню" id="423"/>
-				<ExtendedTooltip name="OutcomesByOfficeGBСостояниеПросмотраРасширеннаяПодсказка" id="424"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="OutcomesByOfficeGBУправлениеПоиском" id="425">
-				<AdditionSource>
-					<Item>OutcomesByOfficeGB</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByOfficeGBУправлениеПоискомКонтекстноеМеню" id="426"/>
-				<ExtendedTooltip name="OutcomesByOfficeGBУправлениеПоискомРасширеннаяПодсказка" id="427"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация10" id="451">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>obr</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация10КонтекстноеМеню" id="452"/>
-			<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="453"/>
-		</LabelDecoration>
-		<Table name="OutcomesByRetail" id="332">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>OutcomesByRetail</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>OutcomesByRetail</v8:content>
-				</v8:item>
-			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="OutcomesByRetailКонтекстноеМеню" id="333"/>
-			<AutoCommandBar name="OutcomesByRetailКоманднаяПанель" id="334"/>
-			<ExtendedTooltip name="OutcomesByRetailРасширеннаяПодсказка" id="335"/>
-			<SearchStringAddition name="OutcomesByRetailСтрокаПоиска" id="336">
-				<AdditionSource>
-					<Item>OutcomesByRetail</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByRetailСтрокаПоискаКонтекстноеМеню" id="337"/>
-				<ExtendedTooltip name="OutcomesByRetailСтрокаПоискаРасширеннаяПодсказка" id="338"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="OutcomesByRetailСостояниеПросмотра" id="339">
-				<AdditionSource>
-					<Item>OutcomesByRetail</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByRetailСостояниеПросмотраКонтекстноеМеню" id="340"/>
-				<ExtendedTooltip name="OutcomesByRetailСостояниеПросмотраРасширеннаяПодсказка" id="341"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="OutcomesByRetailУправлениеПоиском" id="342">
-				<AdditionSource>
-					<Item>OutcomesByRetail</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="OutcomesByRetailУправлениеПоискомКонтекстноеМеню" id="343"/>
-				<ExtendedTooltip name="OutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="344"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация11" id="454">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>tdia</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация11КонтекстноеМеню" id="455"/>
-			<ExtendedTooltip name="Декорация11РасширеннаяПодсказка" id="456"/>
-		</LabelDecoration>
-		<Table name="TradeDocsInActs" id="345">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>TradeDocsInActs</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>TradeDocsInActs</v8:content>
-				</v8:item>
-			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="TradeDocsInActsКонтекстноеМеню" id="346"/>
-			<AutoCommandBar name="TradeDocsInActsКоманднаяПанель" id="347"/>
-			<ExtendedTooltip name="TradeDocsInActsРасширеннаяПодсказка" id="348"/>
-			<SearchStringAddition name="TradeDocsInActsСтрокаПоиска" id="349">
-				<AdditionSource>
-					<Item>TradeDocsInActs</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInActsСтрокаПоискаКонтекстноеМеню" id="350"/>
-				<ExtendedTooltip name="TradeDocsInActsСтрокаПоискаРасширеннаяПодсказка" id="351"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="TradeDocsInActsСостояниеПросмотра" id="352">
-				<AdditionSource>
-					<Item>TradeDocsInActs</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInActsСостояниеПросмотраКонтекстноеМеню" id="353"/>
-				<ExtendedTooltip name="TradeDocsInActsСостояниеПросмотраРасширеннаяПодсказка" id="354"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="TradeDocsInActsУправлениеПоиском" id="355">
-				<AdditionSource>
-					<Item>TradeDocsInActs</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInActsУправлениеПоискомКонтекстноеМеню" id="356"/>
-				<ExtendedTooltip name="TradeDocsInActsУправлениеПоискомРасширеннаяПодсказка" id="357"/>
-			</SearchControlAddition>
-		</Table>
-		<LabelDecoration name="Декорация6" id="439">
-			<Title formatted="false">
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>In bills</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="Декорация6КонтекстноеМеню" id="440"/>
-			<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="441"/>
-		</LabelDecoration>
-		<Table name="TradeDocsInBills" id="358">
-			<Representation>List</Representation>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<DataPath>TradeDocsInBills</DataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>TradeDocsInBills</v8:content>
-				</v8:item>
-			</Title>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="TradeDocsInBillsКонтекстноеМеню" id="359"/>
-			<AutoCommandBar name="TradeDocsInBillsКоманднаяПанель" id="360"/>
-			<ExtendedTooltip name="TradeDocsInBillsРасширеннаяПодсказка" id="361"/>
-			<SearchStringAddition name="TradeDocsInBillsСтрокаПоиска" id="362">
-				<AdditionSource>
-					<Item>TradeDocsInBills</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInBillsСтрокаПоискаКонтекстноеМеню" id="363"/>
-				<ExtendedTooltip name="TradeDocsInBillsСтрокаПоискаРасширеннаяПодсказка" id="364"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="TradeDocsInBillsСостояниеПросмотра" id="365">
-				<AdditionSource>
-					<Item>TradeDocsInBills</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInBillsСостояниеПросмотраКонтекстноеМеню" id="366"/>
-				<ExtendedTooltip name="TradeDocsInBillsСостояниеПросмотраРасширеннаяПодсказка" id="367"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="TradeDocsInBillsУправлениеПоиском" id="368">
-				<AdditionSource>
-					<Item>TradeDocsInBills</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="TradeDocsInBillsУправлениеПоискомКонтекстноеМеню" id="369"/>
-				<ExtendedTooltip name="TradeDocsInBillsУправлениеПоискомРасширеннаяПодсказка" id="370"/>
-			</SearchControlAddition>
-		</Table>
-		<Table name="DateList" id="396">
-			<Representation>List</Representation>
-			<Header>false</Header>
-			<HorizontalLines>false</HorizontalLines>
-			<VerticalLines>false</VerticalLines>
-			<DataPath>DateList</DataPath>
-			<RowPictureDataPath>DateList.Picture</RowPictureDataPath>
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>DateList</v8:content>
-				</v8:item>
-			</Title>
-			<ContextMenu name="DateListКонтекстноеМеню" id="397"/>
-			<AutoCommandBar name="DateListКоманднаяПанель" id="398"/>
-			<ExtendedTooltip name="DateListРасширеннаяПодсказка" id="399"/>
-			<SearchStringAddition name="DateListСтрокаПоиска" id="400">
-				<AdditionSource>
-					<Item>DateList</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="DateListСтрокаПоискаКонтекстноеМеню" id="401"/>
-				<ExtendedTooltip name="DateListСтрокаПоискаРасширеннаяПодсказка" id="402"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="DateListСостояниеПросмотра" id="403">
-				<AdditionSource>
-					<Item>DateList</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="DateListСостояниеПросмотраКонтекстноеМеню" id="404"/>
-				<ExtendedTooltip name="DateListСостояниеПросмотраРасширеннаяПодсказка" id="405"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="DateListУправлениеПоиском" id="406">
-				<AdditionSource>
-					<Item>DateList</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="DateListУправлениеПоискомКонтекстноеМеню" id="407"/>
-				<ExtendedTooltip name="DateListУправлениеПоискомРасширеннаяПодсказка" id="408"/>
-			</SearchControlAddition>
+			<TitleTextColor>#333333</TitleTextColor>
+			<TitleFont ref="style:LargeTextFont" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
+			<Group>Vertical</Group>
+			<Behavior>Collapsible</Behavior>
+			<BackColor>#FFA891</BackColor>
+			<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="532"/>
 			<ChildItems>
+				<LabelDecoration name="Декорация7" id="442">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>IncomesByDischarge</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация7КонтекстноеМеню" id="443"/>
+					<ExtendedTooltip name="Декорация7РасширеннаяПодсказка" id="444"/>
+				</LabelDecoration>
+				<Table name="IncomesByDischarge" id="293">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>IncomesByDischarge</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>IncomesByDischarge</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="IncomesByDischargeКонтекстноеМеню" id="294"/>
+					<AutoCommandBar name="IncomesByDischargeКоманднаяПанель" id="295">
+						<Autofill>false</Autofill>
+					</AutoCommandBar>
+					<ExtendedTooltip name="IncomesByDischargeРасширеннаяПодсказка" id="296"/>
+					<SearchStringAddition name="IncomesByDischargeСтрокаПоиска" id="297">
+						<AdditionSource>
+							<Item>IncomesByDischarge</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="IncomesByDischargeСтрокаПоискаКонтекстноеМеню" id="298"/>
+						<ExtendedTooltip name="IncomesByDischargeСтрокаПоискаРасширеннаяПодсказка" id="299"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="IncomesByDischargeСостояниеПросмотра" id="300">
+						<AdditionSource>
+							<Item>IncomesByDischarge</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="IncomesByDischargeСостояниеПросмотраКонтекстноеМеню" id="301"/>
+						<ExtendedTooltip name="IncomesByDischargeСостояниеПросмотраРасширеннаяПодсказка" id="302"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="IncomesByDischargeУправлениеПоиском" id="303">
+						<AdditionSource>
+							<Item>IncomesByDischarge</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="IncomesByDischargeУправлениеПоискомКонтекстноеМеню" id="304"/>
+						<ExtendedTooltip name="IncomesByDischargeУправлениеПоискомРасширеннаяПодсказка" id="305"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация8" id="445">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ItemOutcomesByRetail</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация8КонтекстноеМеню" id="446"/>
+					<ExtendedTooltip name="Декорация8РасширеннаяПодсказка" id="447"/>
+				</LabelDecoration>
+				<Table name="ItemOutcomesByRetail" id="306">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>ItemOutcomesByRetail</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>IncomesByDischarge</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="ItemOutcomesByRetailКонтекстноеМеню" id="307"/>
+					<AutoCommandBar name="ItemOutcomesByRetailКоманднаяПанель" id="308"/>
+					<ExtendedTooltip name="ItemOutcomesByRetailРасширеннаяПодсказка" id="309"/>
+					<SearchStringAddition name="ItemOutcomesByRetailСтрокаПоиска" id="310">
+						<AdditionSource>
+							<Item>ItemOutcomesByRetail</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ItemOutcomesByRetailСтрокаПоискаКонтекстноеМеню" id="311"/>
+						<ExtendedTooltip name="ItemOutcomesByRetailСтрокаПоискаРасширеннаяПодсказка" id="312"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="ItemOutcomesByRetailСостояниеПросмотра" id="313">
+						<AdditionSource>
+							<Item>ItemOutcomesByRetail</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="ItemOutcomesByRetailСостояниеПросмотраКонтекстноеМеню" id="314"/>
+						<ExtendedTooltip name="ItemOutcomesByRetailСостояниеПросмотраРасширеннаяПодсказка" id="315"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="ItemOutcomesByRetailУправлениеПоиском" id="316">
+						<AdditionSource>
+							<Item>ItemOutcomesByRetail</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="ItemOutcomesByRetailУправлениеПоискомКонтекстноеМеню" id="317"/>
+						<ExtendedTooltip name="ItemOutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="318"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация5" id="412">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Office</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация5КонтекстноеМеню" id="413"/>
+					<ExtendedTooltip name="Декорация5РасширеннаяПодсказка" id="414"/>
+				</LabelDecoration>
+				<Table name="OutcomesByOffice" id="319">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>OutcomesByOffice</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>OutcomesByOffice</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="OutcomesByOfficeКонтекстноеМеню" id="320"/>
+					<AutoCommandBar name="OutcomesByOfficeКоманднаяПанель" id="321"/>
+					<ExtendedTooltip name="OutcomesByOfficeРасширеннаяПодсказка" id="322"/>
+					<SearchStringAddition name="OutcomesByOfficeСтрокаПоиска" id="323">
+						<AdditionSource>
+							<Item>OutcomesByOffice</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeСтрокаПоискаКонтекстноеМеню" id="324"/>
+						<ExtendedTooltip name="OutcomesByOfficeСтрокаПоискаРасширеннаяПодсказка" id="325"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="OutcomesByOfficeСостояниеПросмотра" id="326">
+						<AdditionSource>
+							<Item>OutcomesByOffice</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeСостояниеПросмотраКонтекстноеМеню" id="327"/>
+						<ExtendedTooltip name="OutcomesByOfficeСостояниеПросмотраРасширеннаяПодсказка" id="328"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="OutcomesByOfficeУправлениеПоиском" id="329">
+						<AdditionSource>
+							<Item>OutcomesByOffice</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeУправлениеПоискомКонтекстноеМеню" id="330"/>
+						<ExtendedTooltip name="OutcomesByOfficeУправлениеПоискомРасширеннаяПодсказка" id="331"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация9" id="448">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>obogb</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация9КонтекстноеМеню" id="449"/>
+					<ExtendedTooltip name="Декорация9РасширеннаяПодсказка" id="450"/>
+				</LabelDecoration>
+				<Table name="OutcomesByOfficeGB" id="415">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>OutcomesByOfficeGB</DataPath>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="OutcomesByOfficeGBКонтекстноеМеню" id="416"/>
+					<AutoCommandBar name="OutcomesByOfficeGBКоманднаяПанель" id="417"/>
+					<ExtendedTooltip name="OutcomesByOfficeGBРасширеннаяПодсказка" id="418"/>
+					<SearchStringAddition name="OutcomesByOfficeGBСтрокаПоиска" id="419">
+						<AdditionSource>
+							<Item>OutcomesByOfficeGB</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeGBСтрокаПоискаКонтекстноеМеню" id="420"/>
+						<ExtendedTooltip name="OutcomesByOfficeGBСтрокаПоискаРасширеннаяПодсказка" id="421"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="OutcomesByOfficeGBСостояниеПросмотра" id="422">
+						<AdditionSource>
+							<Item>OutcomesByOfficeGB</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeGBСостояниеПросмотраКонтекстноеМеню" id="423"/>
+						<ExtendedTooltip name="OutcomesByOfficeGBСостояниеПросмотраРасширеннаяПодсказка" id="424"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="OutcomesByOfficeGBУправлениеПоиском" id="425">
+						<AdditionSource>
+							<Item>OutcomesByOfficeGB</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByOfficeGBУправлениеПоискомКонтекстноеМеню" id="426"/>
+						<ExtendedTooltip name="OutcomesByOfficeGBУправлениеПоискомРасширеннаяПодсказка" id="427"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация10" id="451">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>obr</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация10КонтекстноеМеню" id="452"/>
+					<ExtendedTooltip name="Декорация10РасширеннаяПодсказка" id="453"/>
+				</LabelDecoration>
+				<Table name="OutcomesByRetail" id="332">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>OutcomesByRetail</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>OutcomesByRetail</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="OutcomesByRetailКонтекстноеМеню" id="333"/>
+					<AutoCommandBar name="OutcomesByRetailКоманднаяПанель" id="334"/>
+					<ExtendedTooltip name="OutcomesByRetailРасширеннаяПодсказка" id="335"/>
+					<SearchStringAddition name="OutcomesByRetailСтрокаПоиска" id="336">
+						<AdditionSource>
+							<Item>OutcomesByRetail</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByRetailСтрокаПоискаКонтекстноеМеню" id="337"/>
+						<ExtendedTooltip name="OutcomesByRetailСтрокаПоискаРасширеннаяПодсказка" id="338"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="OutcomesByRetailСостояниеПросмотра" id="339">
+						<AdditionSource>
+							<Item>OutcomesByRetail</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByRetailСостояниеПросмотраКонтекстноеМеню" id="340"/>
+						<ExtendedTooltip name="OutcomesByRetailСостояниеПросмотраРасширеннаяПодсказка" id="341"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="OutcomesByRetailУправлениеПоиском" id="342">
+						<AdditionSource>
+							<Item>OutcomesByRetail</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="OutcomesByRetailУправлениеПоискомКонтекстноеМеню" id="343"/>
+						<ExtendedTooltip name="OutcomesByRetailУправлениеПоискомРасширеннаяПодсказка" id="344"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация11" id="454">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>tdia</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация11КонтекстноеМеню" id="455"/>
+					<ExtendedTooltip name="Декорация11РасширеннаяПодсказка" id="456"/>
+				</LabelDecoration>
+				<Table name="TradeDocsInActs" id="345">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>TradeDocsInActs</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>TradeDocsInActs</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="TradeDocsInActsКонтекстноеМеню" id="346"/>
+					<AutoCommandBar name="TradeDocsInActsКоманднаяПанель" id="347"/>
+					<ExtendedTooltip name="TradeDocsInActsРасширеннаяПодсказка" id="348"/>
+					<SearchStringAddition name="TradeDocsInActsСтрокаПоиска" id="349">
+						<AdditionSource>
+							<Item>TradeDocsInActs</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInActsСтрокаПоискаКонтекстноеМеню" id="350"/>
+						<ExtendedTooltip name="TradeDocsInActsСтрокаПоискаРасширеннаяПодсказка" id="351"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="TradeDocsInActsСостояниеПросмотра" id="352">
+						<AdditionSource>
+							<Item>TradeDocsInActs</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInActsСостояниеПросмотраКонтекстноеМеню" id="353"/>
+						<ExtendedTooltip name="TradeDocsInActsСостояниеПросмотраРасширеннаяПодсказка" id="354"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="TradeDocsInActsУправлениеПоиском" id="355">
+						<AdditionSource>
+							<Item>TradeDocsInActs</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInActsУправлениеПоискомКонтекстноеМеню" id="356"/>
+						<ExtendedTooltip name="TradeDocsInActsУправлениеПоискомРасширеннаяПодсказка" id="357"/>
+					</SearchControlAddition>
+				</Table>
+				<LabelDecoration name="Декорация6" id="439">
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>In bills</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="Декорация6КонтекстноеМеню" id="440"/>
+					<ExtendedTooltip name="Декорация6РасширеннаяПодсказка" id="441"/>
+				</LabelDecoration>
+				<Table name="TradeDocsInBills" id="358">
+					<Representation>List</Representation>
+					<EnableStartDrag>true</EnableStartDrag>
+					<EnableDrag>true</EnableDrag>
+					<DataPath>TradeDocsInBills</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>TradeDocsInBills</v8:content>
+						</v8:item>
+					</Title>
+					<RowFilter xsi:nil="true"/>
+					<ContextMenu name="TradeDocsInBillsКонтекстноеМеню" id="359"/>
+					<AutoCommandBar name="TradeDocsInBillsКоманднаяПанель" id="360"/>
+					<ExtendedTooltip name="TradeDocsInBillsРасширеннаяПодсказка" id="361"/>
+					<SearchStringAddition name="TradeDocsInBillsСтрокаПоиска" id="362">
+						<AdditionSource>
+							<Item>TradeDocsInBills</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInBillsСтрокаПоискаКонтекстноеМеню" id="363"/>
+						<ExtendedTooltip name="TradeDocsInBillsСтрокаПоискаРасширеннаяПодсказка" id="364"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="TradeDocsInBillsСостояниеПросмотра" id="365">
+						<AdditionSource>
+							<Item>TradeDocsInBills</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInBillsСостояниеПросмотраКонтекстноеМеню" id="366"/>
+						<ExtendedTooltip name="TradeDocsInBillsСостояниеПросмотраРасширеннаяПодсказка" id="367"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="TradeDocsInBillsУправлениеПоиском" id="368">
+						<AdditionSource>
+							<Item>TradeDocsInBills</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="TradeDocsInBillsУправлениеПоискомКонтекстноеМеню" id="369"/>
+						<ExtendedTooltip name="TradeDocsInBillsУправлениеПоискомРасширеннаяПодсказка" id="370"/>
+					</SearchControlAddition>
+				</Table>
 				<InputField name="DateListЗначение" id="409">
-					<DataPath>DateList.Value</DataPath>
+					<DataPath>Items.DateList.CurrentData.Value</DataPath>
 					<EditMode>EnterOnInput</EditMode>
 					<BackColor>#9EFF9A</BackColor>
 					<ContextMenu name="DateListЗначениеКонтекстноеМеню" id="410"/>
 					<ExtendedTooltip name="DateListЗначениеРасширеннаяПодсказка" id="411"/>
 				</InputField>
+				<Table name="DateList" id="396">
+					<Representation>List</Representation>
+					<Header>false</Header>
+					<HorizontalLines>false</HorizontalLines>
+					<VerticalLines>false</VerticalLines>
+					<DataPath>DateList</DataPath>
+					<RowPictureDataPath>DateList.Picture</RowPictureDataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>DateList</v8:content>
+						</v8:item>
+					</Title>
+					<ContextMenu name="DateListКонтекстноеМеню" id="397"/>
+					<AutoCommandBar name="DateListКоманднаяПанель" id="398"/>
+					<ExtendedTooltip name="DateListРасширеннаяПодсказка" id="399"/>
+					<SearchStringAddition name="DateListСтрокаПоиска" id="400">
+						<AdditionSource>
+							<Item>DateList</Item>
+							<Type>SearchStringRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="DateListСтрокаПоискаКонтекстноеМеню" id="401"/>
+						<ExtendedTooltip name="DateListСтрокаПоискаРасширеннаяПодсказка" id="402"/>
+					</SearchStringAddition>
+					<ViewStatusAddition name="DateListСостояниеПросмотра" id="403">
+						<AdditionSource>
+							<Item>DateList</Item>
+							<Type>ViewStatusRepresentation</Type>
+						</AdditionSource>
+						<ContextMenu name="DateListСостояниеПросмотраКонтекстноеМеню" id="404"/>
+						<ExtendedTooltip name="DateListСостояниеПросмотраРасширеннаяПодсказка" id="405"/>
+					</ViewStatusAddition>
+					<SearchControlAddition name="DateListУправлениеПоиском" id="406">
+						<AdditionSource>
+							<Item>DateList</Item>
+							<Type>SearchControl</Type>
+						</AdditionSource>
+						<ContextMenu name="DateListУправлениеПоискомКонтекстноеМеню" id="407"/>
+						<ExtendedTooltip name="DateListУправлениеПоискомРасширеннаяПодсказка" id="408"/>
+					</SearchControlAddition>
+				</Table>
 			</ChildItems>
-		</Table>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -1343,8 +1428,8 @@
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
 						<v8:NumberQualifiers>
-							<v8:Digits>13</v8:Digits>
-							<v8:FractionDigits>0</v8:FractionDigits>
+							<v8:Digits>20</v8:Digits>
+							<v8:FractionDigits>7</v8:FractionDigits>
 							<v8:AllowedSign>Any</v8:AllowedSign>
 						</v8:NumberQualifiers>
 					</Type>
@@ -1357,11 +1442,7 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>xs:string</v8:Type>
-						<v8:StringQualifiers>
-							<v8:Length>0</v8:Length>
-							<v8:AllowedLength>Variable</v8:AllowedLength>
-						</v8:StringQualifiers>
+						<v8:Type>cfg:CatalogRef.УпаковкиЕдиницыИзмерения</v8:Type>
 					</Type>
 				</Column>
 				<Column name="Объем" id="16">
@@ -1497,21 +1578,6 @@
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
-			</Type>
-		</Attribute>
-		<Attribute name="OutBOTableName" id="7">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Out BOTable name</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:string</v8:Type>
-				<v8:StringQualifiers>
-					<v8:Length>0</v8:Length>
-					<v8:AllowedLength>Variable</v8:AllowedLength>
-				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="ТИтоги" id="8">
@@ -1720,6 +1786,9 @@
 				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
+			<Save>
+				<Field>ВыбКонтрагент</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ВыбДоговорГСМ" id="22">
 			<Title>
@@ -1756,6 +1825,9 @@
 				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
 			</Type>
 			<SavedData>true</SavedData>
+			<Save>
+				<Field>ВыбКонтрагентДляПереливов</Field>
+			</Save>
 		</Attribute>
 		<Attribute name="ВыбДоговорКонтрагентаДляПереливов" id="25">
 			<Title>
@@ -1782,6 +1854,132 @@
 			<SavedData>true</SavedData>
 			<Save>
 				<Field>ФлагБухУчет</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="DoPostDoc" id="27">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Do post doc</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+			<Save>
+				<Field>DoPostDoc</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ОИтоги" id="28">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>О итоги</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ВидДвижения" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Вид движения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>8</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ФормаОплаты" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Форма оплаты</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>10</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Клиент" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Клиент</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Всего" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Всего</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:decimal</v8:Type>
+						<v8:NumberQualifiers>
+							<v8:Digits>15</v8:Digits>
+							<v8:FractionDigits>2</v8:FractionDigits>
+							<v8:AllowedSign>Any</v8:AllowedSign>
+						</v8:NumberQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ВыбГрузоотправитель" id="29">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб грузоотправитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Контрагенты</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВыбГрузоотправитель</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыбСкладОтправитель" id="30">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб склад отправитель</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВыбСкладОтправитель</Field>
+			</Save>
+		</Attribute>
+		<Attribute name="ВыбСкладОтправительФасовка" id="31">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выб склад отправитель фасовка</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>cfg:CatalogRef.Склады</v8:Type>
+			</Type>
+			<Save>
+				<Field>ВыбСкладОтправительФасовка</Field>
 			</Save>
 		</Attribute>
 	</Attributes>
@@ -1830,6 +2028,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ReadOrders</Action>
+		</Command>
+		<Command name="CreateDocs" id="4">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Create docs</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Create docs</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>CreateDocsCl</Action>
 		</Command>
 	</Commands>
 </Form>
