@@ -123,6 +123,7 @@
 									<ChildItems>
 										<InputField name="ТекВариантРасчетаНалогов" id="428">
 											<DataPath>ТекВариантРасчетаНалогов</DataPath>
+											<Visible>false</Visible>
 											<ContextMenu name="ТекВариантРасчетаНалоговКонтекстноеМеню" id="429"/>
 											<ExtendedTooltip name="ТекВариантРасчетаНалоговРасширеннаяПодсказка" id="430"/>
 										</InputField>
@@ -786,6 +787,7 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Группа8" id="531">
+			<Visible>false</Visible>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -1501,7 +1503,11 @@
 						</v8:item>
 					</Title>
 					<Type>
-						<v8:Type>cfg:CatalogRef.СтавкиНДС</v8:Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
 					</Type>
 				</Column>
 				<Column name="НДС" id="20">
@@ -1757,7 +1763,11 @@
 				</v8:item>
 			</Title>
 			<Type>
-				<v8:Type>cfg:CatalogRef.ВариантыРасчетаНалогов</v8:Type>
+				<v8:Type>xs:string</v8:Type>
+				<v8:StringQualifiers>
+					<v8:Length>0</v8:Length>
+					<v8:AllowedLength>Variable</v8:AllowedLength>
+				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
 		<Attribute name="ВыбСклад" id="20">
