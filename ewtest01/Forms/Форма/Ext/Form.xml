@@ -130,12 +130,6 @@
 									</ChildItems>
 								</UsualGroup>
 								<UsualGroup name="Группа1" id="457">
-									<Title>
-										<v8:item>
-											<v8:lang>ru</v8:lang>
-											<v8:content>Группа1</v8:content>
-										</v8:item>
-									</Title>
 									<Width>80</Width>
 									<Group>Horizontal</Group>
 									<ExtendedTooltip name="Группа1РасширеннаяПодсказка" id="458"/>
@@ -217,12 +211,6 @@
 											<ExtendedTooltip name="LeftBottomLeftРасширеннаяПодсказка" id="271"/>
 											<ChildItems>
 												<UsualGroup name="Группа5" id="477">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Гр5</v8:content>
-														</v8:item>
-													</Title>
 													<Group>Horizontal</Group>
 													<ExtendedTooltip name="Группа5РасширеннаяПодсказка" id="478"/>
 													<ChildItems>
@@ -241,12 +229,6 @@
 													</ChildItems>
 												</UsualGroup>
 												<UsualGroup name="lblb" id="431">
-													<Title>
-														<v8:item>
-															<v8:lang>ru</v8:lang>
-															<v8:content>Lblb</v8:content>
-														</v8:item>
-													</Title>
 													<ToolTip>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -513,12 +495,6 @@
 					</ChildItems>
 				</UsualGroup>
 				<UsualGroup name="MainMiddle" id="36">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Main middle (ТабФайл)</v8:content>
-						</v8:item>
-					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -787,7 +763,6 @@
 			</ChildItems>
 		</UsualGroup>
 		<UsualGroup name="Группа8" id="531">
-			<Visible>false</Visible>
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
